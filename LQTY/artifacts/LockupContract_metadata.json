@@ -1,0 +1,203 @@
+{
+	"compiler": {
+		"version": "0.6.11+commit.5ef660b1"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_lqtyTokenAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_beneficiary",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_unlockTime",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_beneficiary",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_unlockTime",
+						"type": "uint256"
+					}
+				],
+				"name": "LockupContractCreated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_LQTYwithdrawal",
+						"type": "uint256"
+					}
+				],
+				"name": "LockupContractEmptied",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "NAME",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "SECONDS_IN_ONE_YEAR",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "beneficiary",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "lqtyToken",
+				"outputs": [
+					{
+						"internalType": "contract ILQTYToken",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "unlockTime",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "withdrawLQTY",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/contracts/LQTY/LockupContract.sol": "LockupContract"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 1
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/contracts/Dependencies/IERC20.sol": {
+			"keccak256": "0xe0b2473eba89df8d27d7cea2a99fce788c212f3fd393c9508e449e51a3f220fa",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8522c2a1abbac5136e3b0d76f458e2ecc9d380687444517a11db341634e9c146",
+				"dweb:/ipfs/QmXuyq8uopmrPruJvhXX9q5X2xqmrYmTauhEPQhoKjmaV9"
+			]
+		},
+		"contracts/contracts/Dependencies/IERC2612.sol": {
+			"keccak256": "0xd376458452f8b480bfea549637bd71d3f9eb1f12e9d59d1beff373417462d67f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e0750f6f0a3624aa6cc128d5e666f78b5edf7e394a08c4c06b7ef536278d34af",
+				"dweb:/ipfs/QmRTv2MnvAAbuBDtDNWN4Jyv5dAsCdLAzGpJPSnforPLqv"
+			]
+		},
+		"contracts/contracts/Dependencies/SafeMath.sol": {
+			"keccak256": "0x666b890992a066cc791f36c2975cd595d9761a014c654c385ed36ffaf658f3fd",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://7b261f6ac077c4ebc81dd3f4c833f866139acd8b908feff72385c32f83c21c2d",
+				"dweb:/ipfs/Qmb91cmmBEFhwUWwVxgxTPmeNxzdiyCdxoVXB2gN3Gvg7e"
+			]
+		},
+		"contracts/contracts/Interfaces/ILQTYToken.sol": {
+			"keccak256": "0x5e4ffb34b4f3fa77718061a40858722b3811be1ea99ca498c637e97237a4a83a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5c729af77d7c08cb4ac0b0886dbda817afd5b83a235797b82b0ce9b3a251faf7",
+				"dweb:/ipfs/QmbWf5HVLs1v7vrfuLzgXhddUvyPW76YXLYMRqH96o5Bpx"
+			]
+		},
+		"contracts/contracts/LQTY/LockupContract.sol": {
+			"keccak256": "0xf5019a7c2fe19079e42ee2269bcbe272f04d3175ed1175bb0257a750857a830f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ea178b4e6d03e22d251873f3ab94b9a95220ba3ac86d04ef73f60ac307648598",
+				"dweb:/ipfs/QmWsUP4smdo8emx47o2F1FNNjvkCtGsUom49wnA9SmzSUN"
+			]
+		}
+	},
+	"version": 1
+}

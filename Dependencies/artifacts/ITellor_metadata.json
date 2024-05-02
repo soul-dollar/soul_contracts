@@ -1,0 +1,1556 @@
+{
+	"compiler": {
+		"version": "0.6.11+commit.5ef660b1"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_requestId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_tip",
+						"type": "uint256"
+					}
+				],
+				"name": "addTip",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_user",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_spender",
+						"type": "address"
+					}
+				],
+				"name": "allowance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_user",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "allowedToTrade",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_spender",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "approve",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_user",
+						"type": "address"
+					}
+				],
+				"name": "balanceOf",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_user",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_blockNumber",
+						"type": "uint256"
+					}
+				],
+				"name": "balanceOfAt",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_requestId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_timestamp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_minerIndex",
+						"type": "uint256"
+					}
+				],
+				"name": "beginDispute",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "claimOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "decimals",
+				"outputs": [
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "depositStake",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "_challenge",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "address",
+						"name": "_miner",
+						"type": "address"
+					}
+				],
+				"name": "didMine",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_disputeId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_address",
+						"type": "address"
+					}
+				],
+				"name": "didVote",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "_data",
+						"type": "bytes32"
+					}
+				],
+				"name": "getAddressVars",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_disputeId",
+						"type": "uint256"
+					}
+				],
+				"name": "getAllDisputeVars",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					},
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256[9]",
+						"name": "",
+						"type": "uint256[9]"
+					},
+					{
+						"internalType": "int256",
+						"name": "",
+						"type": "int256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getCurrentVariables",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "_hash",
+						"type": "bytes32"
+					}
+				],
+				"name": "getDisputeIdByDisputeHash",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_disputeId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "_data",
+						"type": "bytes32"
+					}
+				],
+				"name": "getDisputeUintVars",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getLastNewValue",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_requestId",
+						"type": "uint256"
+					}
+				],
+				"name": "getLastNewValueById",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_requestId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "getMinedBlockNum",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_requestId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "getMinersByRequestIdAndTimestamp",
+				"outputs": [
+					{
+						"internalType": "address[5]",
+						"name": "",
+						"type": "address[5]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getNewCurrentVariables",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "_challenge",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint256[5]",
+						"name": "_requestIds",
+						"type": "uint256[5]"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_difficutly",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_tip",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_requestId",
+						"type": "uint256"
+					}
+				],
+				"name": "getNewValueCountbyRequestId",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getNewVariablesOnDeck",
+				"outputs": [
+					{
+						"internalType": "uint256[5]",
+						"name": "idsOnDeck",
+						"type": "uint256[5]"
+					},
+					{
+						"internalType": "uint256[5]",
+						"name": "tipsOnDeck",
+						"type": "uint256[5]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "_request",
+						"type": "bytes32"
+					}
+				],
+				"name": "getRequestIdByQueryHash",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_index",
+						"type": "uint256"
+					}
+				],
+				"name": "getRequestIdByRequestQIndex",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "getRequestIdByTimestamp",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getRequestQ",
+				"outputs": [
+					{
+						"internalType": "uint256[51]",
+						"name": "",
+						"type": "uint256[51]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_requestId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "_data",
+						"type": "bytes32"
+					}
+				],
+				"name": "getRequestUintVars",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_requestId",
+						"type": "uint256"
+					}
+				],
+				"name": "getRequestVars",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_staker",
+						"type": "address"
+					}
+				],
+				"name": "getStakerInfo",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_requestId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "getSubmissionsByTimestamp",
+				"outputs": [
+					{
+						"internalType": "uint256[5]",
+						"name": "",
+						"type": "uint256[5]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_requestID",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_index",
+						"type": "uint256"
+					}
+				],
+				"name": "getTimestampbyRequestIDandIndex",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getTopRequestIDs",
+				"outputs": [
+					{
+						"internalType": "uint256[5]",
+						"name": "_requestIds",
+						"type": "uint256[5]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "_data",
+						"type": "bytes32"
+					}
+				],
+				"name": "getUintVar",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getVariablesOnDeck",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_requestId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "isInDispute",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "name",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_propNewTellorAddress",
+						"type": "address"
+					}
+				],
+				"name": "proposeFork",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address payable",
+						"name": "_pendingOwner",
+						"type": "address"
+					}
+				],
+				"name": "proposeOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "requestStakingWithdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_requestId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "retrieveData",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_nonce",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256[5]",
+						"name": "_requestId",
+						"type": "uint256[5]"
+					},
+					{
+						"internalType": "uint256[5]",
+						"name": "_value",
+						"type": "uint256[5]"
+					}
+				],
+				"name": "submitMiningSolution",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_nonce",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_requestId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_value",
+						"type": "uint256"
+					}
+				],
+				"name": "submitMiningSolution",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "symbol",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_disputeId",
+						"type": "uint256"
+					}
+				],
+				"name": "tallyVotes",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalSupply",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "transfer",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "transferFrom",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_disputeId",
+						"type": "uint256"
+					}
+				],
+				"name": "unlockDisputeFee",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_disputeId",
+						"type": "uint256"
+					}
+				],
+				"name": "updateTellor",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_disputeId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "_supportsDispute",
+						"type": "bool"
+					}
+				],
+				"name": "vote",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "withdrawStake",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"addTip(uint256,uint256)": {
+					"details": "Add tip to Request value from oracle",
+					"params": {
+						"_requestId": "being requested to be mined",
+						"_tip": "amount the requester is willing to pay to be get on queue. Miners mine the onDeckQueryHash, or the api with the highest payout pool"
+					}
+				},
+				"allowance(address,address)": {
+					"params": {
+						"_spender": "address",
+						"_user": "address"
+					},
+					"returns": {
+						"_0": "Returns the remaining allowance of tokens granted to the _spender from the _user"
+					}
+				},
+				"allowedToTrade(address,uint256)": {
+					"details": "This function returns whether or not a given user is allowed to trade a given amount",
+					"params": {
+						"_amount": "uint of amount",
+						"_user": "address"
+					},
+					"returns": {
+						"_0": "true if the user is alloed to trade the amount specified"
+					}
+				},
+				"approve(address,uint256)": {
+					"details": "This function approves a _spender an _amount of tokens to use",
+					"params": {
+						"_amount": "amount the spender is being approved for",
+						"_spender": "address"
+					},
+					"returns": {
+						"_0": "true if spender appproved successfully"
+					}
+				},
+				"balanceOf(address)": {
+					"details": "Gets balance of owner specified",
+					"params": {
+						"_user": "is the owner address used to look up the balance"
+					},
+					"returns": {
+						"_0": "Returns the balance associated with the passed in _user"
+					}
+				},
+				"balanceOfAt(address,uint256)": {
+					"details": "Queries the balance of _user at a specific _blockNumber",
+					"params": {
+						"_blockNumber": "The block number when the balance is queried",
+						"_user": "The address from which the balance will be retrieved"
+					},
+					"returns": {
+						"_0": "The balance at _blockNumber"
+					}
+				},
+				"beginDispute(uint256,uint256,uint256)": {
+					"details": "Helps initialize a dispute by assigning it a disputeId when a miner returns a false on the validate array(in Tellor.ProofOfWork) it sends the invalidated value information to POS voting",
+					"params": {
+						"_minerIndex": "the index of the miner that submitted the value being disputed. Since each official value requires 5 miners to submit a value.",
+						"_requestId": "being disputed",
+						"_timestamp": "being disputed"
+					}
+				},
+				"claimOwnership()": {
+					"details": "Allows the new owner to claim control of the contract"
+				},
+				"decimals()": {
+					"details": "Allows users to access the number of decimals"
+				},
+				"depositStake()": {
+					"details": "This function allows miners to deposit their stake."
+				},
+				"didMine(bytes32,address)": {
+					"details": "This function tells you if a given challenge has been completed by a given miner",
+					"params": {
+						"_challenge": "the challenge to search for",
+						"_miner": "address that you want to know if they solved the challenge"
+					},
+					"returns": {
+						"_0": "true if the _miner address provided solved the"
+					}
+				},
+				"didVote(uint256,address)": {
+					"details": "Checks if an address voted in a given dispute",
+					"params": {
+						"_address": "to look up",
+						"_disputeId": "to look up"
+					},
+					"returns": {
+						"_0": "bool of whether or not party voted"
+					}
+				},
+				"getAddressVars(bytes32)": {
+					"details": "allows Tellor to read data from the addressVars mapping",
+					"params": {
+						"_data": "is the keccak256(\"variable_name\") of the variable that is being accessed. These are examples of how the variables are saved within other functions: addressVars[keccak256(\"_owner\")] addressVars[keccak256(\"tellorContract\")] return address"
+					}
+				},
+				"getAllDisputeVars(uint256)": {
+					"details": "Gets all dispute variables",
+					"params": {
+						"_disputeId": "to look up"
+					},
+					"returns": {
+						"_0": "bytes32 hash of dispute",
+						"_1": "bool executed where true if it has been voted on",
+						"_2": "bool disputeVotePassed",
+						"_3": "bool isPropFork true if the dispute is a proposed fork",
+						"_4": "address of reportedMiner",
+						"_5": "address of reportingParty",
+						"_6": "address of proposedForkAddress    uint of requestId    uint of timestamp    uint of value    uint of minExecutionDate    uint of numberOfVotes    uint of blocknumber    uint of minerSlot    uint of quorum    uint of fee",
+						"_7": "int count of the current tally"
+					}
+				},
+				"getCurrentVariables()": {
+					"details": "Getter function for variables for the requestId being currently mined(currentRequestId)",
+					"returns": {
+						"_0": "current challenge, curretnRequestId, level of difficulty, api/query string, and granularity(number of decimals requested), total tip for the request"
+					}
+				},
+				"getDisputeIdByDisputeHash(bytes32)": {
+					"details": "Checks if a given hash of miner,requestId has been disputed",
+					"params": {
+						"_hash": "is the sha256(abi.encodePacked(_miners[2],_requestId));"
+					},
+					"returns": {
+						"_0": "uint disputeId"
+					}
+				},
+				"getDisputeUintVars(uint256,bytes32)": {
+					"details": "Checks for uint variables in the disputeUintVars mapping based on the disuputeId",
+					"params": {
+						"_data": "the variable to pull from the mapping. _data = keccak256(\"variable_name\") where variable_name is the variables/strings used to save the data in the mapping. The variables names are commented out under the disputeUintVars under the Dispute struct",
+						"_disputeId": "is the dispute id;"
+					},
+					"returns": {
+						"_0": "uint value for the bytes32 data submitted"
+					}
+				},
+				"getLastNewValue()": {
+					"details": "Gets the a value for the latest timestamp available",
+					"returns": {
+						"_0": "value for timestamp of last proof of work submited",
+						"_1": "true if the is a timestamp for the lastNewValue"
+					}
+				},
+				"getLastNewValueById(uint256)": {
+					"details": "Gets the a value for the latest timestamp available",
+					"params": {
+						"_requestId": "being requested"
+					},
+					"returns": {
+						"_0": "value for timestamp of last proof of work submited and if true if it exist or 0 and false if it doesn't"
+					}
+				},
+				"getMinedBlockNum(uint256,uint256)": {
+					"details": "Gets blocknumber for mined timestamp",
+					"params": {
+						"_requestId": "to look up",
+						"_timestamp": "is the timestamp to look up blocknumber"
+					},
+					"returns": {
+						"_0": "uint of the blocknumber which the dispute was mined"
+					}
+				},
+				"getMinersByRequestIdAndTimestamp(uint256,uint256)": {
+					"details": "Gets the 5 miners who mined the value for the specified requestId/_timestamp",
+					"params": {
+						"_requestId": "to look up",
+						"_timestamp": "is the timestamp to look up miners for"
+					},
+					"returns": {
+						"_0": "the 5 miners' addresses"
+					}
+				},
+				"getNewCurrentVariables()": {
+					"details": "Getter for the current variables that include the 5 requests Id's",
+					"returns": {
+						"_challenge": "_requestIds _difficultky _tip the challenge, 5 requestsId, difficulty and tip"
+					}
+				},
+				"getNewValueCountbyRequestId(uint256)": {
+					"details": "Counts the number of values that have been submited for the request if called for the currentRequest being mined it can tell you how many miners have submitted a value for that request so far",
+					"params": {
+						"_requestId": "the requestId to look up"
+					},
+					"returns": {
+						"_0": "uint count of the number of values received for the requestId"
+					}
+				},
+				"getNewVariablesOnDeck()": {
+					"details": "Getter for the 5 requests Id's next in line to get mined",
+					"returns": {
+						"idsOnDeck": "tipsOnDeck  the 5 requestsId"
+					}
+				},
+				"getRequestIdByQueryHash(bytes32)": {
+					"details": "Getter function for requestId based on the queryHash",
+					"params": {
+						"_request": "is the hash(of string api and granularity) to check if a request already exists"
+					},
+					"returns": {
+						"_0": "uint requestId"
+					}
+				},
+				"getRequestIdByRequestQIndex(uint256)": {
+					"details": "Getter function for the specified requestQ index",
+					"params": {
+						"_index": "to look up in the requestQ array"
+					},
+					"returns": {
+						"_0": "uint of reqeuestId"
+					}
+				},
+				"getRequestIdByTimestamp(uint256)": {
+					"details": "Getter function for requestId based on timestamp",
+					"params": {
+						"_timestamp": "to check requestId"
+					},
+					"returns": {
+						"_0": "uint of reqeuestId"
+					}
+				},
+				"getRequestQ()": {
+					"details": "Getter function for the requestQ array",
+					"returns": {
+						"_0": "the requestQ arrray"
+					}
+				},
+				"getRequestUintVars(uint256,bytes32)": {
+					"details": "Allowes access to the uint variables saved in the apiUintVars under the requestDetails struct for the requestId specified",
+					"params": {
+						"_data": "the variable to pull from the mapping. _data = keccak256(\"variable_name\") where variable_name is the variables/strings used to save the data in the mapping. The variables names are commented out under the apiUintVars under the requestDetails struct",
+						"_requestId": "to look up"
+					},
+					"returns": {
+						"_0": "uint value of the apiUintVars specified in _data for the requestId specified"
+					}
+				},
+				"getRequestVars(uint256)": {
+					"details": "Gets the API struct variables that are not mappings",
+					"params": {
+						"_requestId": "to look up"
+					},
+					"returns": {
+						"_0": "string of api to query",
+						"_1": "string of symbol of api to query",
+						"_2": "bytes32 hash of string",
+						"_3": "bytes32 of the granularity(decimal places) requested",
+						"_4": "uint of index in requestQ array",
+						"_5": "uint of current payout/tip for this requestId"
+					}
+				},
+				"getStakerInfo(address)": {
+					"details": "This function allows users to retireve all information about a staker",
+					"params": {
+						"_staker": "address of staker inquiring about"
+					},
+					"returns": {
+						"_0": "uint current state of staker",
+						"_1": "uint startDate of staking"
+					}
+				},
+				"getSubmissionsByTimestamp(uint256,uint256)": {
+					"details": "Gets the 5 miners who mined the value for the specified requestId/_timestamp",
+					"params": {
+						"_requestId": "to look up",
+						"_timestamp": "is the timestampt to look up miners for"
+					},
+					"returns": {
+						"_0": "address[5] array of 5 addresses ofminers that mined the requestId"
+					}
+				},
+				"getTimestampbyRequestIDandIndex(uint256,uint256)": {
+					"details": "Gets the timestamp for the value based on their index",
+					"params": {
+						"_index": "is the value index to look up",
+						"_requestID": "is the requestId to look up"
+					},
+					"returns": {
+						"_0": "uint timestamp"
+					}
+				},
+				"getTopRequestIDs()": {
+					"details": "Getter for the top tipped 5 requests Id's",
+					"returns": {
+						"_requestIds": "the 5 requestsId"
+					}
+				},
+				"getUintVar(bytes32)": {
+					"details": "Getter for the variables saved under the TellorStorageStruct uintVars variable",
+					"params": {
+						"_data": "the variable to pull from the mapping. _data = keccak256(\"variable_name\") where variable_name is the variables/strings used to save the data in the mapping. The variables names are commented out under the uintVars under the TellorStorageStruct struct This is an example of how data is saved into the mapping within other functions: self.uintVars[keccak256(\"stakerCount\")]"
+					},
+					"returns": {
+						"_0": "uint of specified variable"
+					}
+				},
+				"getVariablesOnDeck()": {
+					"details": "Getter function for next requestId on queue/request with highest payout at time the function is called",
+					"returns": {
+						"_0": "onDeck/info on request with highest payout-- RequestId, Totaltips, and API query string"
+					}
+				},
+				"isInDispute(uint256,uint256)": {
+					"details": "Gets the 5 miners who mined the value for the specified requestId/_timestamp",
+					"params": {
+						"_requestId": "to look up",
+						"_timestamp": "is the timestamp to look up miners for"
+					},
+					"returns": {
+						"_0": "bool true if requestId/timestamp is under dispute"
+					}
+				},
+				"name()": {
+					"details": "Allows users to access the token's name"
+				},
+				"proposeFork(address)": {
+					"details": "Allows for a fork to be proposed",
+					"params": {
+						"_propNewTellorAddress": "address for new proposed Tellor"
+					}
+				},
+				"proposeOwnership(address)": {
+					"details": "Allows the current owner to propose transfer control of the contract to a newOwner and the ownership is pending until the new owner calls the claimOwnership function",
+					"params": {
+						"_pendingOwner": "The address to transfer ownership to."
+					}
+				},
+				"requestStakingWithdraw()": {
+					"details": "This function allows stakers to request to withdraw their stake (no longer stake) once they lock for withdraw(stakes.currentStatus = 2) they are locked for 7 days before they can withdraw the stake"
+				},
+				"retrieveData(uint256,uint256)": {
+					"details": "Retreive value from oracle based on timestamp",
+					"params": {
+						"_requestId": "being requested",
+						"_timestamp": "to retreive data/value from"
+					},
+					"returns": {
+						"_0": "value for timestamp submitted"
+					}
+				},
+				"submitMiningSolution(string,uint256,uint256)": {
+					"details": "This is called by the miner when they submit the PoW solution (proof of work and value)",
+					"params": {
+						"_nonce": "uint submitted by miner",
+						"_requestId": "the apiId being mined",
+						"_value": "of api query"
+					}
+				},
+				"submitMiningSolution(string,uint256[5],uint256[5])": {
+					"details": "This is called by the miner when they submit the PoW solution (proof of work and value)",
+					"params": {
+						"_nonce": "uint submitted by miner",
+						"_requestId": "is the array of the 5 PSR's being mined",
+						"_value": "is an array of 5 values"
+					}
+				},
+				"symbol()": {
+					"details": "Allows users to access the token's symbol"
+				},
+				"tallyVotes(uint256)": {
+					"details": "tallies the votes.",
+					"params": {
+						"_disputeId": "is the dispute id"
+					}
+				},
+				"totalSupply()": {
+					"details": "Getter for the total_supply of oracle tokens",
+					"returns": {
+						"_0": "uint total supply"
+					}
+				},
+				"transfer(address,uint256)": {
+					"details": "Allows for a transfer of tokens to _to",
+					"params": {
+						"_amount": "The amount of tokens to send",
+						"_to": "The address to send tokens to"
+					},
+					"returns": {
+						"_0": "true if transfer is successful"
+					}
+				},
+				"transferFrom(address,address,uint256)": {
+					"details": "Sends _amount tokens to _to from _from on the condition it is approved by _from",
+					"params": {
+						"_amount": "The amount of tokens to be transferred",
+						"_from": "The address holding the tokens being transferred",
+						"_to": "The address of the recipient"
+					},
+					"returns": {
+						"_0": "True if the transfer was successful"
+					}
+				},
+				"unlockDisputeFee(uint256)": {
+					"details": "Allows disputer to unlock the dispute fee",
+					"params": {
+						"_disputeId": "to unlock fee from"
+					}
+				},
+				"updateTellor(uint256)": {
+					"details": "Updates the Tellor address after a proposed fork has passed the vote and day has gone by without a dispute",
+					"params": {
+						"_disputeId": "the disputeId for the proposed fork"
+					}
+				},
+				"vote(uint256,bool)": {
+					"details": "Allows token holders to vote",
+					"params": {
+						"_disputeId": "is the dispute id",
+						"_supportsDispute": "is the vote (true=the dispute has basis false = vote against dispute)"
+					}
+				},
+				"withdrawStake()": {
+					"details": "This function allows users to withdraw their stake after a 7 day waiting period from request"
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/contracts/Dependencies/ITellor.sol": "ITellor"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/contracts/Dependencies/ITellor.sol": {
+			"keccak256": "0x9f2984a17b9afddcc5bbac4c07714e6b1f6edb1cc54714ddd40fb4409fe259eb",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://351276482be04a139a59e46e14899c733477ba1ce366e68ef44214bc2240bdba",
+				"dweb:/ipfs/QmeX9xc56bJFKpeLqznajpzS8zs5z8iiNaVmfNbPeVgcP6"
+			]
+		}
+	},
+	"version": 1
+}

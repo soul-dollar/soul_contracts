@@ -1,0 +1,46 @@
+{
+	"compiler": {
+		"version": "0.6.11+commit.5ef660b1"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"notice": "The purpose of this contract is to hold LUSD tokens for gas compensation: https://github.com/liquity/dev#gas-compensation When a borrower opens a trove, an additional 50 LUSD debt is issued, and 50 LUSD is minted and sent to this contract. When a borrower closes their active trove, this gas compensation is refunded: 50 LUSD is burned from the this contract's balance, and the corresponding 50 LUSD debt on the trove is cancelled. See this issue for more context: https://github.com/liquity/dev/issues/186",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/contracts/GasPool.sol": "GasPool"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 1
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/contracts/GasPool.sol": {
+			"keccak256": "0x1846196c734332515a2559e6b293a638867437589f35c70d3526413b2aad0684",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0ba135169e31b85434cd2a57427e01a89df50921e453202240a2cf6d1ac326fe",
+				"dweb:/ipfs/QmS5GKgXXAbcvGs97r1YeHWmmvEkheE6cAbZyPAFF4aydX"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,128 @@
+{
+	"compiler": {
+		"version": "0.6.11+commit.5ef660b1"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_lastGoodPrice",
+						"type": "uint256"
+					}
+				],
+				"name": "LastGoodPriceUpdated",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "fetchPrice",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getPrice",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					}
+				],
+				"name": "setPrice",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/contracts/Oracle.sol": "PriceFeedTestnet"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/contracts/Dependencies/Ownable.sol": {
+			"keccak256": "0x33ebd980403ab2462257b6b0352dd42d6d4ae86ce9de8c8fa7b8b5a84c585f1b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c164606fdfd19624a7cf85fb8258b1866431a45a208489cd7158db0f132fc212",
+				"dweb:/ipfs/QmYsmA6SdwwHSguo2SHDWP9wAxkvb1NPr7Yevw9vGhwCaV"
+			]
+		},
+		"contracts/contracts/Interfaces/IDIAOracle.sol": {
+			"keccak256": "0x925aa40615e1b7670729608915d89eabf8af4866b118daec87e6e9b32ffc77be",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d589cd68d3d3a672c045439ac4dc95c5a809bc43d6118c584535976c0bb6c5c5",
+				"dweb:/ipfs/QmUZZ5CYosP4hCVs71jqeRE68eDK7dvsEKn1LKwtYnLRB7"
+			]
+		},
+		"contracts/contracts/Interfaces/IPriceFeed.sol": {
+			"keccak256": "0x8831c3e2112e1c395d372b6fb591a4548f5a1ed8df63aa38ccbc817cccb4dc3d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://19460a762dc4f5c486e9075ccfe9e798b2b199168a47998bc4203028197e7d03",
+				"dweb:/ipfs/QmW9Sfvm6AYHCK4NUBMzu85NAne111haHYtyRATpqSC64Z"
+			]
+		},
+		"contracts/contracts/Oracle.sol": {
+			"keccak256": "0x7b9fb94903323953f766e72a99a3dfd9e3561097458407a2a4dead017198f5cb",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e85a3563de95db7847304759059c9f6dcb7a66cbaf7ed044a62e3e5409b5106b",
+				"dweb:/ipfs/QmcvDjYzzvVtsbYZThGG8nu7kFmtmFg8XaeiCFRhRyQT6C"
+			]
+		}
+	},
+	"version": 1
+}

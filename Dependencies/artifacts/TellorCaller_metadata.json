@@ -1,0 +1,123 @@
+{
+	"compiler": {
+		"version": "0.6.11+commit.5ef660b1"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_tellorMasterAddress",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_requestId",
+						"type": "uint256"
+					}
+				],
+				"name": "getTellorCurrentValue",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "ifRetrieve",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_timestampRetrieved",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "tellor",
+				"outputs": [
+					{
+						"internalType": "contract ITellor",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/contracts/Dependencies/TellorCaller.sol": "TellorCaller"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/contracts/Dependencies/ITellor.sol": {
+			"keccak256": "0x9f2984a17b9afddcc5bbac4c07714e6b1f6edb1cc54714ddd40fb4409fe259eb",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://351276482be04a139a59e46e14899c733477ba1ce366e68ef44214bc2240bdba",
+				"dweb:/ipfs/QmeX9xc56bJFKpeLqznajpzS8zs5z8iiNaVmfNbPeVgcP6"
+			]
+		},
+		"contracts/contracts/Dependencies/SafeMath.sol": {
+			"keccak256": "0x666b890992a066cc791f36c2975cd595d9761a014c654c385ed36ffaf658f3fd",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://7b261f6ac077c4ebc81dd3f4c833f866139acd8b908feff72385c32f83c21c2d",
+				"dweb:/ipfs/Qmb91cmmBEFhwUWwVxgxTPmeNxzdiyCdxoVXB2gN3Gvg7e"
+			]
+		},
+		"contracts/contracts/Dependencies/TellorCaller.sol": {
+			"keccak256": "0x29c1fffa3d1aa8a4820502605381e66e2fc1538728ffcfd7e87f3d7c1f1ef038",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6d034bb5b1716ee32effc9675946c544f18eb0563103af582071cd7070647bc5",
+				"dweb:/ipfs/QmR7UCVvsTjPDygKTMDPFT8xwbeDwMKEgdwQpSaueYLC6u"
+			]
+		},
+		"contracts/contracts/Interfaces/ITellorCaller.sol": {
+			"keccak256": "0xda790bd8d4de73788e82f223c0e6986407e0a9277f3a059bce01617008e9f05d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6f33bbcbc67ea04e4553064d5ff3e699b3db7a3f8236295a5e6d707c2cd6c7f1",
+				"dweb:/ipfs/QmVzUZpUJc8VnpXvMuKTSRHW9WLpVQYHqV5pTa1V6YGFhv"
+			]
+		}
+	},
+	"version": 1
+}
