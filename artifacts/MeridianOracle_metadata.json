@@ -1,0 +1,501 @@
+{
+	"compiler": {
+		"version": "0.6.11+commit.5ef660b1"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "DIAOracleAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "fallbackOracle",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "baseCurrency",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "baseCurrencyUnit",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "priceAgeLimit",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "asset",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "string",
+						"name": "key",
+						"type": "string"
+					}
+				],
+				"name": "AssetKeyUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "baseCurrency",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "baseCurrencyUnit",
+						"type": "uint256"
+					}
+				],
+				"name": "BaseCurrencySet",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "diaOracleAddress",
+						"type": "address"
+					}
+				],
+				"name": "DIAOracleUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "fallbackOracle",
+						"type": "address"
+					}
+				],
+				"name": "FallbackOracleUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "BASE_CURRENCY",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "BASE_CURRENCY_UNIT",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "asset",
+						"type": "address"
+					}
+				],
+				"name": "getAssetPrice",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "assets",
+						"type": "address[]"
+					}
+				],
+				"name": "getAssetsPrices",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getFallbackOracle",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getMasterOracle",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getMaxPriceAgeLimit",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "asset",
+						"type": "address"
+					}
+				],
+				"name": "getSourceOfAsset",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "isOwner",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "asset",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "key",
+						"type": "string"
+					}
+				],
+				"name": "setAssetKey",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "diaOracleAddress",
+						"type": "address"
+					}
+				],
+				"name": "setDIAOracle",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "fallbackOracle",
+						"type": "address"
+					}
+				],
+				"name": "setFallbackOracle",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "AgeLimit",
+						"type": "uint256"
+					}
+				],
+				"name": "setMaxPriceAgeLimit",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"author": "OmniDex",
+			"kind": "dev",
+			"methods": {
+				"constructor": {
+					"params": {
+						"DIAOracleAddress": "The address of the master oracle to use",
+						"baseCurrency": "the base currency used for the price quotes. If USD is used, base currency is 0x0",
+						"baseCurrencyUnit": "the unit of the base currency",
+						"fallbackOracle": "The address of the fallback oracle to use if the data of an        aggregator is not consistent",
+						"priceAgeLimit": "the max permitted age of oracle price before call is forwarded to fallback oracle"
+					}
+				},
+				"getAssetPrice(address)": {
+					"params": {
+						"asset": "The asset address"
+					}
+				},
+				"getAssetsPrices(address[])": {
+					"params": {
+						"assets": "The list of assets addresses"
+					}
+				},
+				"getFallbackOracle()": {
+					"returns": {
+						"_0": "address The addres of the fallback oracle"
+					}
+				},
+				"getMasterOracle()": {
+					"returns": {
+						"_0": "address The addres of the DIA oracle"
+					}
+				},
+				"getMaxPriceAgeLimit()": {
+					"returns": {
+						"_0": "the max age in seconds"
+					}
+				},
+				"getSourceOfAsset(address)": {
+					"params": {
+						"asset": "The address of the asset"
+					},
+					"returns": {
+						"_0": "The DIA key string"
+					}
+				},
+				"isOwner()": {
+					"details": "Returns true if the caller is the current owner."
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"setAssetKey(address,string)": {
+					"params": {
+						"asset": "The address of the asset to be set",
+						"key": "The DIA keys/symbol of the source of each asset"
+					}
+				},
+				"setDIAOracle(address)": {
+					"params": {
+						"diaOracleAddress": "The address of the MasterOracle"
+					}
+				},
+				"setFallbackOracle(address)": {
+					"params": {
+						"fallbackOracle": "The address of the fallbackOracle"
+					}
+				},
+				"setMaxPriceAgeLimit(uint256)": {
+					"params": {
+						"AgeLimit": "max age in seconds of latest price"
+					}
+				}
+			},
+			"title": "OmniDexOracleV2",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"constructor": "Constructor",
+				"getAssetPrice(address)": {
+					"notice": "Gets an asset price by address"
+				},
+				"getAssetsPrices(address[])": {
+					"notice": "Gets a list of prices from a list of assets addresses"
+				},
+				"getFallbackOracle()": {
+					"notice": "Gets the address of the fallback oracle"
+				},
+				"getMasterOracle()": {
+					"notice": "Gets the address of the master oracle"
+				},
+				"getMaxPriceAgeLimit()": {
+					"notice": "Gets the maximum age that the oracle price can be before the call is routed to fallback"
+				},
+				"getSourceOfAsset(address)": {
+					"notice": "Gets the DIA key for an asset address"
+				},
+				"setAssetKey(address,string)": {
+					"notice": "External function called by the OmniDex governance to set or replace DIA keys for assets"
+				},
+				"setDIAOracle(address)": {
+					"notice": "Sets the MasterOracle - Callable only by the OmniDex governance"
+				},
+				"setFallbackOracle(address)": {
+					"notice": "Sets the fallbackOracle - Callable only by the OmniDex governance"
+				},
+				"setMaxPriceAgeLimit(uint256)": {
+					"notice": "Sets the max age that an oracle price can be before fallback oracle is called - Callable only by the OmniDex governance"
+				}
+			},
+			"notice": "Proxy smart contract to get the price of an asset from a price source, with DIA oracle         smart contracts as primary option - If the returned price by DIA is <= 0, or price is older than maxPriceAgeLimit the call is forwarded to a fallbackOracle - Owned by the OmniDex governance system, allowed to add keys for assets, replace them,   change master oracle and change the fallbackOracle",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/contracts/MeridianFallback.sol": "MeridianOracle"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/contracts/DIAOracleV2.sol": {
+			"keccak256": "0x7c45756bdd941d95044b429ad75c747461770248f3c0bb6d8178e68fd223e081",
+			"urls": [
+				"bzz-raw://796e0f4eefa8a33693fe40eb3e50f02b68634c4859d09379a702c9e01dde32af",
+				"dweb:/ipfs/Qma7iV44nK3aUvbffMBsdBPJPHthUByaSGVjDsjtZi483Z"
+			]
+		},
+		"contracts/contracts/Dependencies/Ownable.sol": {
+			"keccak256": "0x33ebd980403ab2462257b6b0352dd42d6d4ae86ce9de8c8fa7b8b5a84c585f1b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c164606fdfd19624a7cf85fb8258b1866431a45a208489cd7158db0f132fc212",
+				"dweb:/ipfs/QmYsmA6SdwwHSguo2SHDWP9wAxkvb1NPr7Yevw9vGhwCaV"
+			]
+		},
+		"contracts/contracts/Interfaces/IPriceFeed.sol": {
+			"keccak256": "0x8addf8adace4b531698302a46cc65d357ef4302aea661502263420e931318172",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0054616ceb3db586a38f205e807c0724752d6d172b34299b9acdcfefdb8fffaf",
+				"dweb:/ipfs/QmY9BPjvfui1ReXjrTb4wYrCzZXNow7xqkqZyPG1eHUB4i"
+			]
+		},
+		"contracts/contracts/Interfaces/IPriceOracleGetter.sol": {
+			"keccak256": "0xf3f3c38249fd4cb7876f1504137e8d9f5fcb58939fd8a066f705a69ccd9faf8f",
+			"license": "agpl-3.0",
+			"urls": [
+				"bzz-raw://f8048ddd04ce34baefd94e05fba049c17e34d947d4d425cf6a614a98a9632b98",
+				"dweb:/ipfs/QmZs4Mw1ubnatKbGDeTdntYZzTFe4TNXVbhxLc6xw98PoG"
+			]
+		},
+		"contracts/contracts/MeridianFallback.sol": {
+			"keccak256": "0x0fe23511cda7b2bd9bcf2a6e08b6f1fcf256c88671d77d1a05b8d76fa6af9be8",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d8a9f8cbde771c270864b850363f94aeae458dbe3895b16c25761aa7e0792602",
+				"dweb:/ipfs/QmSD1m9w793tPeiJx5eYSaqQG31vhbBMubSugXD6mipML3"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,72 @@
+{
+	"compiler": {
+		"version": "0.6.11+commit.5ef660b1"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_lastGoodPrice",
+						"type": "uint256"
+					}
+				],
+				"name": "LastGoodPriceUpdated",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "fetchPrice",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/contracts/Interfaces/IPriceFeed.sol": "IPriceFeed"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/contracts/Interfaces/IPriceFeed.sol": {
+			"keccak256": "0x8addf8adace4b531698302a46cc65d357ef4302aea661502263420e931318172",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0054616ceb3db586a38f205e807c0724752d6d172b34299b9acdcfefdb8fffaf",
+				"dweb:/ipfs/QmY9BPjvfui1ReXjrTb4wYrCzZXNow7xqkqZyPG1eHUB4i"
+			]
+		}
+	},
+	"version": 1
+}

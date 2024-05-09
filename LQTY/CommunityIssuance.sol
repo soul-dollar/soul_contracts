@@ -2,126 +2,113 @@
 
 pragma solidity 0.6.11;
 
-import "../Interfaces/ILQTYToken.sol";
 import "../Interfaces/ICommunityIssuance.sol";
 import "../Dependencies/BaseMath.sol";
 import "../Dependencies/LiquityMath.sol";
 import "../Dependencies/Ownable.sol";
 import "../Dependencies/CheckContract.sol";
 import "../Dependencies/SafeMath.sol";
+import "../Dependencies/IERC20.sol"; //JJ 
 
 
 contract CommunityIssuance is ICommunityIssuance, Ownable, CheckContract, BaseMath {
     using SafeMath for uint;
 
+    // Provides functions to set up reward cycles for stability pool staking
+    // Stability pool address and rewardsToken address must be initialized before initiating a rewards cycle
+    // Sufficient reward tokens must be deposited to the contract before initiating a rewards cycle
+    // Only one rewards cycle at any given time and new cycles will override existing
+    // If tokens are deposited to the contract but are not used in the current reward cycle they are available for future rewards cycles
+
     // --- Data ---
 
     string constant public NAME = "CommunityIssuance";
 
+    // for frontend legacy only
     uint constant public SECONDS_IN_ONE_MINUTE = 60;
+    uint constant public ISSUANCE_FACTOR = 1;
+    uint constant public LQTYSupplyCap = 0; // 32 million
+    // ***
 
-   /* The issuance factor F determines the curvature of the issuance curve.
-    *
-    * Minutes in one year: 60*24*365 = 525600
-    *
-    * For 50% of remaining tokens issued each year, with minutes as time units, we have:
-    * 
-    * F ** 525600 = 0.5
-    * 
-    * Re-arranging:
-    * 
-    * 525600 * ln(F) = ln(0.5)
-    * F = 0.5 ** (1/525600)
-    * F = 0.999998681227695000 
-    */
-    uint constant public ISSUANCE_FACTOR = 999998681227695000;
-
-    /* 
-    * The community LQTY supply cap is the starting balance of the Community Issuance contract.
-    * It should be minted to this contract by LQTYToken, when the token is deployed.
-    * 
-    * Set to 32M (slightly less than 1/3) of total LQTY supply.
-    */
-    uint constant public LQTYSupplyCap = 32e24; // 32 million
-
-    ILQTYToken public lqtyToken;
+    IERC20 public rewardToken; 
+    IERC20 public lqtyToken; // retained for frontend integration only
 
     address public stabilityPoolAddress;
 
-    uint public totalLQTYIssued;
-    uint public immutable deploymentTime;
+    uint public totalLQTYIssued;            // retained for frontend integration only
+    uint public immutable deploymentTime;   // retained for frontend integration only
+    
+    uint public totalRewardsIssued;  
+    uint public rewardsStartTime; 
+    uint public rewardsEndTime; 
+    uint public rewardsPerSecond; 
+    bool public rewardsAvailable;  
+    bool public isInitialized; 
 
     // --- Events ---
 
-    event LQTYTokenAddressSet(address _lqtyTokenAddress);
+    event LQTYTokenAddressSet(address _rewardsTokenAddress);  
     event StabilityPoolAddressSet(address _stabilityPoolAddress);
-    event TotalLQTYIssuedUpdated(uint _totalLQTYIssued);
-
-    // --- Functions ---
+    event TotalLQTYIssuedUpdated(uint _totalRewardsIssued); 
 
     constructor() public {
         deploymentTime = block.timestamp;
     }
 
-    function setAddresses
-    (
-        address _lqtyTokenAddress, 
-        address _stabilityPoolAddress
-    ) 
-        external 
-        onlyOwner 
-        override 
-    {
-        checkContract(_lqtyTokenAddress);
+    // --- Functions ---
+
+    function setAddresses (address _rewardsTokenAddress, address _stabilityPoolAddress) external onlyOwner override {
+        require(isInitialized == false,"CommunityIssuance: already initialized");
+        checkContract(_rewardsTokenAddress);
         checkContract(_stabilityPoolAddress);
-
-        lqtyToken = ILQTYToken(_lqtyTokenAddress);
+        rewardToken = IERC20(_rewardsTokenAddress);
+        lqtyToken = rewardToken; // for frontend integration only
         stabilityPoolAddress = _stabilityPoolAddress;
+        emit LQTYTokenAddressSet(_rewardsTokenAddress);
+        emit StabilityPoolAddressSet(stabilityPoolAddress);        
+        isInitialized = true;
+    }
 
-        // When LQTYToken deployed, it should have transferred CommunityIssuance's LQTY entitlement
-        uint LQTYBalance = lqtyToken.balanceOf(address(this));
-        assert(LQTYBalance >= LQTYSupplyCap);
-
-        emit LQTYTokenAddressSet(_lqtyTokenAddress);
-        emit StabilityPoolAddressSet(_stabilityPoolAddress);
-
-        _renounceOwnership();
+    // Sets up a new rewards cycle and will override any existing rewards cycle
+    function setRewardsToken(uint _amount, uint _startTime, uint _rewardsPerSecond) external onlyOwner {
+        require(isInitialized,"CommunityIssuance: Not yet initialized");
+        uint rewardsBalance = rewardToken.balanceOf(address(this));        
+        require(rewardsBalance >= _amount,"CommunityIssuance: Insufficient rewards available");
+        require(_startTime >= block.timestamp, "CommunityIssuance: Rewards start time cannot be in the past");        
+        require(_rewardsPerSecond >= 0 && _rewardsPerSecond < _amount, "CommunityIssuance: Invalid rewards per second");
+        rewardsStartTime = _startTime;
+        rewardsEndTime = rewardsStartTime.add(_amount.div(_rewardsPerSecond));
+        rewardsPerSecond = _rewardsPerSecond;
+        totalRewardsIssued = 0;
+        rewardsAvailable = true;
     }
 
     function issueLQTY() external override returns (uint) {
         _requireCallerIsStabilityPool();
+        uint timeNow = block.timestamp;
+        uint issuance = 0;
 
-        uint latestTotalLQTYIssued = LQTYSupplyCap.mul(_getCumulativeIssuanceFraction()).div(DECIMAL_PRECISION);
-        uint issuance = latestTotalLQTYIssued.sub(totalLQTYIssued);
+        if(rewardsStartTime < timeNow && rewardsAvailable == true) {
+            uint latestTotalRewardsIssued;
+            if(timeNow >=  rewardsEndTime) {
+                rewardsAvailable = false;
+                latestTotalRewardsIssued = (rewardsEndTime.sub(rewardsStartTime)).mul(rewardsPerSecond);
+            } else {
+              latestTotalRewardsIssued = (timeNow.sub(rewardsStartTime)).mul(rewardsPerSecond);  
+            }
+            issuance = latestTotalRewardsIssued.sub(totalRewardsIssued);
 
-        totalLQTYIssued = latestTotalLQTYIssued;
-        emit TotalLQTYIssuedUpdated(latestTotalLQTYIssued);
-        
+            totalRewardsIssued = latestTotalRewardsIssued;
+            totalLQTYIssued = totalRewardsIssued;  // frontend legacy only
+            emit TotalLQTYIssuedUpdated(latestTotalRewardsIssued);
+        }
         return issuance;
     }
 
-    /* Gets 1-f^t    where: f < 1
-
-    f: issuance factor that determines the shape of the curve
-    t:  time passed since last LQTY issuance event  */
-    function _getCumulativeIssuanceFraction() internal view returns (uint) {
-        // Get the time passed since deployment
-        uint timePassedInMinutes = block.timestamp.sub(deploymentTime).div(SECONDS_IN_ONE_MINUTE);
-
-        // f^t
-        uint power = LiquityMath._decPow(ISSUANCE_FACTOR, timePassedInMinutes);
-
-        //  (1 - f^t)
-        uint cumulativeIssuanceFraction = (uint(DECIMAL_PRECISION).sub(power));
-        assert(cumulativeIssuanceFraction <= DECIMAL_PRECISION); // must be in range [0,1]
-
-        return cumulativeIssuanceFraction;
-    }
-
-    function sendLQTY(address _account, uint _LQTYamount) external override {
+    function sendLQTY(address _account, uint _amount) external override {  
         _requireCallerIsStabilityPool();
-
-        lqtyToken.transfer(_account, _LQTYamount);
+        require(isInitialized,"CommunityIssuance: Not yet initialized");
+        rewardToken.transfer(_account, _amount);  
     }
 
     // --- 'require' functions ---

@@ -24,11 +24,14 @@ interface ILQTYStaking {
 
     function setAddresses
     (
+        address _weth,
+        address _mst,
         address _lqtyTokenAddress,
         address _lusdTokenAddress,
         address _troveManagerAddress, 
         address _borrowerOperationsAddress,
-        address _activePoolAddress
+        address _activePoolAddress,
+        address _lqtyVault
     )  external;
 
     function stake(uint _LQTYamount) external;
@@ -42,4 +45,6 @@ interface ILQTYStaking {
     function getPendingETHGain(address _user) external view returns (uint);
 
     function getPendingLUSDGain(address _user) external view returns (uint);
+
+    function receiveERC20(uint _amount) external;
 }

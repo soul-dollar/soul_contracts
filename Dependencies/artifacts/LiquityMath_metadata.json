@@ -1,0 +1,61 @@
+{
+	"compiler": {
+		"version": "0.6.11+commit.5ef660b1"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/contracts/Dependencies/LiquityMath.sol": "LiquityMath"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/contracts/Dependencies/LiquityMath.sol": {
+			"keccak256": "0x7a95ed70d8937e0896c054b433ad0dfc87a9cfd028cae1694098e9d5d68127cd",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://64fd33f9a77c2f0cc9e91f5053f0ae66a40cbd36751b3bffea7a7b834b771f69",
+				"dweb:/ipfs/QmRbtN1Vr9ysLxM3hSSPrqnbmDW4v77Mt1dEbf6tuDoo9g"
+			]
+		},
+		"contracts/contracts/Dependencies/SafeMath.sol": {
+			"keccak256": "0x666b890992a066cc791f36c2975cd595d9761a014c654c385ed36ffaf658f3fd",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://7b261f6ac077c4ebc81dd3f4c833f866139acd8b908feff72385c32f83c21c2d",
+				"dweb:/ipfs/Qmb91cmmBEFhwUWwVxgxTPmeNxzdiyCdxoVXB2gN3Gvg7e"
+			]
+		},
+		"contracts/contracts/Dependencies/console.sol": {
+			"keccak256": "0x6fa1de4ffe22b8f58b0b64d65db11dd5037be9b9db47b365a72adb489e217000",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e0779910f0c9ac7e45e633f4c01493f19beb6f3872b26bf818eeb9f3ed0e4a2e",
+				"dweb:/ipfs/QmQdVMf7Rh4uMFKkmoCitnA5cxUAg47KnH8LYxx7AT4AVw"
+			]
+		}
+	},
+	"version": 1
+}

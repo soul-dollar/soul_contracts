@@ -1,0 +1,166 @@
+{
+	"compiler": {
+		"version": "0.6.11+commit.5ef660b1"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_stakingContract",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_token",
+						"type": "address"
+					}
+				],
+				"name": "TokenAddressSet",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "isTokenSet",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_token",
+						"type": "address"
+					}
+				],
+				"name": "setToken",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "stakingContract",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "token",
+				"outputs": [
+					{
+						"internalType": "contract ILQTYToken",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/contracts/LQTY/LQTYVault.sol": "LQTYVault"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/contracts/Dependencies/IERC20.sol": {
+			"keccak256": "0xe0b2473eba89df8d27d7cea2a99fce788c212f3fd393c9508e449e51a3f220fa",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8522c2a1abbac5136e3b0d76f458e2ecc9d380687444517a11db341634e9c146",
+				"dweb:/ipfs/QmXuyq8uopmrPruJvhXX9q5X2xqmrYmTauhEPQhoKjmaV9"
+			]
+		},
+		"contracts/contracts/Dependencies/IERC2612.sol": {
+			"keccak256": "0xd376458452f8b480bfea549637bd71d3f9eb1f12e9d59d1beff373417462d67f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e0750f6f0a3624aa6cc128d5e666f78b5edf7e394a08c4c06b7ef536278d34af",
+				"dweb:/ipfs/QmRTv2MnvAAbuBDtDNWN4Jyv5dAsCdLAzGpJPSnforPLqv"
+			]
+		},
+		"contracts/contracts/Interfaces/ILQTYToken.sol": {
+			"keccak256": "0x5e4ffb34b4f3fa77718061a40858722b3811be1ea99ca498c637e97237a4a83a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5c729af77d7c08cb4ac0b0886dbda817afd5b83a235797b82b0ce9b3a251faf7",
+				"dweb:/ipfs/QmbWf5HVLs1v7vrfuLzgXhddUvyPW76YXLYMRqH96o5Bpx"
+			]
+		},
+		"contracts/contracts/LQTY/LQTYVault.sol": {
+			"keccak256": "0x0132a7980dd9fb2d6c6280bf0d52f5f077b129dd06cc7a6446ac0893a046235b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e61e20b709c0772c01806a1bd0cf0c7d8c17898a39ba01117d33e176cc6d3880",
+				"dweb:/ipfs/QmSB71dwvjUxHiLtCRjoZFUAs9koRuawjHXBRKT2k3eXY6"
+			]
+		}
+	},
+	"version": 1
+}

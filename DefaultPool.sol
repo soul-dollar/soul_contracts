@@ -2,11 +2,13 @@
 
 pragma solidity 0.6.11;
 
+import './Interfaces/IActivePool.sol';
 import './Interfaces/IDefaultPool.sol';
 import "./Dependencies/SafeMath.sol";
 import "./Dependencies/Ownable.sol";
 import "./Dependencies/CheckContract.sol";
 import "./Dependencies/console.sol";
+import "./Dependencies/IERC20.sol";
 
 /*
  * The Default Pool holds the ETH and LUSD debt (but not LUSD tokens) from liquidations that have been redistributed
@@ -20,6 +22,8 @@ contract DefaultPool is Ownable, CheckContract, IDefaultPool {
 
     string constant public NAME = "DefaultPool";
 
+    IERC20 public WETH;
+    bool public isInitialized;
     address public troveManagerAddress;
     address public activePoolAddress;
     uint256 internal ETH;  // deposited ETH tracker
@@ -30,6 +34,13 @@ contract DefaultPool is Ownable, CheckContract, IDefaultPool {
     event DefaultPoolETHBalanceUpdated(uint _ETH);
 
     // --- Dependency setters ---
+
+    function initialize(address _weth) external onlyOwner {
+        require(!isInitialized, "Already Initialized");
+        checkContract(_weth);
+        isInitialized = true;
+        WETH = IERC20(_weth);
+    }
 
     function setAddresses(
         address _troveManagerAddress,
@@ -69,13 +80,14 @@ contract DefaultPool is Ownable, CheckContract, IDefaultPool {
 
     function sendETHToActivePool(uint _amount) external override {
         _requireCallerIsTroveManager();
+        require(WETH.balanceOf(address(this)) >= _amount,"DefaultPool: Insufficient funds available");
         address activePool = activePoolAddress; // cache to save an SLOAD
         ETH = ETH.sub(_amount);
         emit DefaultPoolETHBalanceUpdated(ETH);
         emit EtherSent(activePool, _amount);
 
-        (bool success, ) = activePool.call{ value: _amount }("");
-        require(success, "DefaultPool: sending ETH failed");
+        require(WETH.transfer(activePool, _amount), "DefaultPool: sending ETH failed");
+        IActivePool(activePool).receiveERC20(_amount);
     }
 
     function increaseLUSDDebt(uint _amount) external override {
@@ -100,11 +112,12 @@ contract DefaultPool is Ownable, CheckContract, IDefaultPool {
         require(msg.sender == troveManagerAddress, "DefaultPool: Caller is not the TroveManager");
     }
 
-    // --- Fallback function ---
+    // --- Receive ERC20 tokens function ---
 
-    receive() external payable {
+    function receiveERC20(uint _amount) external override {
         _requireCallerIsActivePool();
-        ETH = ETH.add(msg.value);
+        require(WETH.balanceOf(address(this)) == ETH.add(_amount),"DefaultPool: Funds not received");
+        ETH = ETH.add(_amount);
         emit DefaultPoolETHBalanceUpdated(ETH);
     }
 }

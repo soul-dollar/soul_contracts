@@ -29,4 +29,6 @@ interface ICollSurplusPool {
     function accountSurplus(address _account, uint _amount) external;
 
     function claimColl(address _account) external;
+
+    function receiveERC20(uint _amount) external;
 }

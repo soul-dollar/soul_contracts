@@ -1,0 +1,59 @@
+{
+	"compiler": {
+		"version": "0.6.11+commit.5ef660b1"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "DECIMAL_PRECISION",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/contracts/Dependencies/BaseMath.sol": "BaseMath"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/contracts/Dependencies/BaseMath.sol": {
+			"keccak256": "0x7e1369ca5cb09e818e345a2def19a261401f79c985a6030b55b7311dd6f53be4",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://21c4e37c07fa164f1ae02336d8451d43615cd7bf11f9f404e3e082864d898f9e",
+				"dweb:/ipfs/QmbePtvXNQD1KVURtNd1EKEVVGse8MJrW5EUQzuGgP8iiW"
+			]
+		}
+	},
+	"version": 1
+}

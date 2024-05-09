@@ -15,6 +15,7 @@ import "./Dependencies/LiquitySafeMath128.sol";
 import "./Dependencies/Ownable.sol";
 import "./Dependencies/CheckContract.sol";
 import "./Dependencies/console.sol";
+import "./Dependencies/IERC20.sol";
 
 /*
  * The Stability Pool holds LUSD tokens deposited by Stability Pool depositors.
@@ -162,6 +163,8 @@ contract StabilityPool is LiquityBase, Ownable, CheckContract, IStabilityPool {
     ICommunityIssuance public communityIssuance;
 
     uint256 internal ETH;  // deposited ether tracker
+    IERC20 public WETH;
+    bool public isInitialized;
 
     // Tracker for LUSD held in the pool. Changes when users deposit/withdraw, and when Trove debt is offset.
     uint256 internal totalLUSDDeposits;
@@ -234,6 +237,8 @@ contract StabilityPool is LiquityBase, Ownable, CheckContract, IStabilityPool {
     uint public lastETHError_Offset;
     uint public lastLUSDLossError_Offset;
 
+    address public admin;
+
     // --- Events ---
 
     event StabilityPoolETHBalanceUpdated(uint _newBalance);
@@ -268,6 +273,13 @@ contract StabilityPool is LiquityBase, Ownable, CheckContract, IStabilityPool {
     event EtherSent(address _to, uint _amount);
 
     // --- Contract setters ---
+
+    function initialize(address _weth) external onlyOwner {
+        require(!isInitialized, "Already Initialized");
+        checkContract(_weth);
+        isInitialized = true;
+        WETH = IERC20(_weth);
+    }
 
     function setAddresses(
         address _borrowerOperationsAddress,
@@ -319,6 +331,19 @@ contract StabilityPool is LiquityBase, Ownable, CheckContract, IStabilityPool {
         return totalLUSDDeposits;
     }
 
+    function setAdmin(address _admin) public onlyOwner {
+        admin = _admin;
+    }
+
+    function setPriceFeed(address _priceFeedAddress) public {
+        require(msg.sender==admin);
+        priceFeed = IPriceFeed(_priceFeedAddress);
+    }
+
+    function renounceAdmin() public {
+        require(msg.sender==admin);
+        admin = address(0);
+    }
     // --- External Depositor Functions ---
 
     /*  provideToSP():
@@ -457,7 +482,8 @@ contract StabilityPool is LiquityBase, Ownable, CheckContract, IStabilityPool {
         emit StabilityPoolETHBalanceUpdated(ETH);
         emit EtherSent(msg.sender, depositorETHGain);
 
-        borrowerOperations.moveETHGainToTrove{ value: depositorETHGain }(msg.sender, _upperHint, _lowerHint);
+        require(WETH.transfer(address(borrowerOperations), depositorETHGain), "StabilityPool: sending ETH failed");
+        borrowerOperations.moveETHGainToTrove(depositorETHGain, msg.sender, _upperHint, _lowerHint);
     }
 
     // --- LQTY issuance functions ---
@@ -831,13 +857,13 @@ contract StabilityPool is LiquityBase, Ownable, CheckContract, IStabilityPool {
 
     function _sendETHGainToDepositor(uint _amount) internal {
         if (_amount == 0) {return;}
+        require(WETH.balanceOf(address(this)) >= _amount,"StabilityPool: Insufficient funds available");
         uint newETH = ETH.sub(_amount);
         ETH = newETH;
         emit StabilityPoolETHBalanceUpdated(newETH);
         emit EtherSent(msg.sender, _amount);
 
-        (bool success, ) = msg.sender.call{ value: _amount }("");
-        require(success, "StabilityPool: sending ETH failed");
+        require(WETH.transfer(msg.sender, _amount), "StabilityPool: sending ETH failed");
     }
 
     // Send LUSD to user and decrease LUSD in Pool
@@ -988,11 +1014,12 @@ contract StabilityPool is LiquityBase, Ownable, CheckContract, IStabilityPool {
         require (_kickbackRate <= DECIMAL_PRECISION, "StabilityPool: Kickback rate must be in range [0,1]");
     }
 
-    // --- Fallback function ---
+    // --- Receive ERC20 tokens function ---
 
-    receive() external payable {
+    function receiveERC20(uint _amount) external override {
         _requireCallerIsActivePool();
-        ETH = ETH.add(msg.value);
+        require(WETH.balanceOf(address(this)) == ETH.add(_amount),"StabilityPool: Funds not received");
+        ETH = ETH.add(_amount);
         StabilityPoolETHBalanceUpdated(ETH);
     }
 }

@@ -1,0 +1,714 @@
+{
+	"compiler": {
+		"version": "0.6.11+commit.5ef660b1"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_activePoolAddress",
+						"type": "address"
+					}
+				],
+				"name": "ActivePoolAddressSet",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_borrowerOperationsAddress",
+						"type": "address"
+					}
+				],
+				"name": "BorrowerOperationsAddressSet",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_account",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "EtherSent",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_F_ETH",
+						"type": "uint256"
+					}
+				],
+				"name": "F_ETHUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_F_LUSD",
+						"type": "uint256"
+					}
+				],
+				"name": "F_LUSDUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_lqtyTokenAddress",
+						"type": "address"
+					}
+				],
+				"name": "LQTYTokenAddressSet",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_lusdTokenAddress",
+						"type": "address"
+					}
+				],
+				"name": "LUSDTokenAddressSet",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "staker",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newStake",
+						"type": "uint256"
+					}
+				],
+				"name": "StakeChanged",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_staker",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_F_ETH",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_F_LUSD",
+						"type": "uint256"
+					}
+				],
+				"name": "StakerSnapshotsUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "staker",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "LUSDGain",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "ETHGain",
+						"type": "uint256"
+					}
+				],
+				"name": "StakingGainsWithdrawn",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_totalLQTYStaked",
+						"type": "uint256"
+					}
+				],
+				"name": "TotalLQTYStakedUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_troveManager",
+						"type": "address"
+					}
+				],
+				"name": "TroveManagerAddressSet",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "DECIMAL_PRECISION",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "F_ETH",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "F_LUSD",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "MST",
+				"outputs": [
+					{
+						"internalType": "contract IERC20",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "NAME",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "activePoolAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "borrowerOperationsAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_user",
+						"type": "address"
+					}
+				],
+				"name": "getPendingETHGain",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_user",
+						"type": "address"
+					}
+				],
+				"name": "getPendingLUSDGain",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_ETHFee",
+						"type": "uint256"
+					}
+				],
+				"name": "increaseF_ETH",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_LUSDFee",
+						"type": "uint256"
+					}
+				],
+				"name": "increaseF_LUSD",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "isOwner",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "lqtyToken",
+				"outputs": [
+					{
+						"internalType": "contract ILQTYToken",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "lqtyVault",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "lusdToken",
+				"outputs": [
+					{
+						"internalType": "contract ILUSDToken",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_mst",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_lqtyTokenAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_lusdTokenAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_troveManagerAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_borrowerOperationsAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_activePoolAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_lqtyVault",
+						"type": "address"
+					}
+				],
+				"name": "setAddresses",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "snapshots",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "F_ETH_Snapshot",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "F_LUSD_Snapshot",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_LQTYamount",
+						"type": "uint256"
+					}
+				],
+				"name": "stake",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "stakes",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalLQTYStaked",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "troveManagerAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_LQTYamount",
+						"type": "uint256"
+					}
+				],
+				"name": "unstake",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"isOwner()": {
+					"details": "Returns true if the caller is the current owner."
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/contracts/LQTY/LQTYStaking.sol": "LQTYStaking"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 1
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/contracts/Dependencies/BaseMath.sol": {
+			"keccak256": "0x7e1369ca5cb09e818e345a2def19a261401f79c985a6030b55b7311dd6f53be4",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://21c4e37c07fa164f1ae02336d8451d43615cd7bf11f9f404e3e082864d898f9e",
+				"dweb:/ipfs/QmbePtvXNQD1KVURtNd1EKEVVGse8MJrW5EUQzuGgP8iiW"
+			]
+		},
+		"contracts/contracts/Dependencies/CheckContract.sol": {
+			"keccak256": "0x3f48bd50ad146a5c01c6c6adc89e4a3871de4497b31c609bfce9cdc280274305",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://dde9848de01c0e6947c6ec5c8b7c54a7dd4ae1586f2e98f8b089bf6351b5ebe9",
+				"dweb:/ipfs/QmcoxPfiKP4LhCTwcAX8RiHG6w6hHQnt46UtCBphNMg4iW"
+			]
+		},
+		"contracts/contracts/Dependencies/IERC20.sol": {
+			"keccak256": "0xe0b2473eba89df8d27d7cea2a99fce788c212f3fd393c9508e449e51a3f220fa",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8522c2a1abbac5136e3b0d76f458e2ecc9d380687444517a11db341634e9c146",
+				"dweb:/ipfs/QmXuyq8uopmrPruJvhXX9q5X2xqmrYmTauhEPQhoKjmaV9"
+			]
+		},
+		"contracts/contracts/Dependencies/IERC2612.sol": {
+			"keccak256": "0xd376458452f8b480bfea549637bd71d3f9eb1f12e9d59d1beff373417462d67f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e0750f6f0a3624aa6cc128d5e666f78b5edf7e394a08c4c06b7ef536278d34af",
+				"dweb:/ipfs/QmRTv2MnvAAbuBDtDNWN4Jyv5dAsCdLAzGpJPSnforPLqv"
+			]
+		},
+		"contracts/contracts/Dependencies/LiquityMath.sol": {
+			"keccak256": "0x7a95ed70d8937e0896c054b433ad0dfc87a9cfd028cae1694098e9d5d68127cd",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://64fd33f9a77c2f0cc9e91f5053f0ae66a40cbd36751b3bffea7a7b834b771f69",
+				"dweb:/ipfs/QmRbtN1Vr9ysLxM3hSSPrqnbmDW4v77Mt1dEbf6tuDoo9g"
+			]
+		},
+		"contracts/contracts/Dependencies/Ownable.sol": {
+			"keccak256": "0x33ebd980403ab2462257b6b0352dd42d6d4ae86ce9de8c8fa7b8b5a84c585f1b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c164606fdfd19624a7cf85fb8258b1866431a45a208489cd7158db0f132fc212",
+				"dweb:/ipfs/QmYsmA6SdwwHSguo2SHDWP9wAxkvb1NPr7Yevw9vGhwCaV"
+			]
+		},
+		"contracts/contracts/Dependencies/SafeMath.sol": {
+			"keccak256": "0x666b890992a066cc791f36c2975cd595d9761a014c654c385ed36ffaf658f3fd",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://7b261f6ac077c4ebc81dd3f4c833f866139acd8b908feff72385c32f83c21c2d",
+				"dweb:/ipfs/Qmb91cmmBEFhwUWwVxgxTPmeNxzdiyCdxoVXB2gN3Gvg7e"
+			]
+		},
+		"contracts/contracts/Dependencies/console.sol": {
+			"keccak256": "0x6fa1de4ffe22b8f58b0b64d65db11dd5037be9b9db47b365a72adb489e217000",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e0779910f0c9ac7e45e633f4c01493f19beb6f3872b26bf818eeb9f3ed0e4a2e",
+				"dweb:/ipfs/QmQdVMf7Rh4uMFKkmoCitnA5cxUAg47KnH8LYxx7AT4AVw"
+			]
+		},
+		"contracts/contracts/Interfaces/ILQTYStaking.sol": {
+			"keccak256": "0x8c5bf7a7bc8bd08943cd80c1e82f87b2d0fe8d14ca85e02651d26380068c8a88",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://52e30211d76d94ba4fe19c2a5969bae07ea760463ee1d24e3f8dc0549df724fb",
+				"dweb:/ipfs/QmaePAf7rZs2GdHcDHgyTkfCTW7UKHEfYs933iw1oxbveo"
+			]
+		},
+		"contracts/contracts/Interfaces/ILQTYToken.sol": {
+			"keccak256": "0x5e4ffb34b4f3fa77718061a40858722b3811be1ea99ca498c637e97237a4a83a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5c729af77d7c08cb4ac0b0886dbda817afd5b83a235797b82b0ce9b3a251faf7",
+				"dweb:/ipfs/QmbWf5HVLs1v7vrfuLzgXhddUvyPW76YXLYMRqH96o5Bpx"
+			]
+		},
+		"contracts/contracts/Interfaces/ILUSDToken.sol": {
+			"keccak256": "0x110542d8c07198d26e96d7a5af8d126e703347f0704ac0265900f1d9c8455665",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a84950b81ccb0f0cdb834f31988bcb2704cb1952f971d303f8b6fc3cae6df850",
+				"dweb:/ipfs/Qmc79GriHrmHe8hw6y8CFwbuANVLM9WLTAVTsjrbvWAjXR"
+			]
+		},
+		"contracts/contracts/LQTY/LQTYStaking.sol": {
+			"keccak256": "0x9a062cc7c1c0518c42873b45b88457eed820fabce3857c59c89bf7adf225f15d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://89be16d41261f4fd7e2c6fbe2fb5a8840bd03fe133d25d846a2615487f658d1f",
+				"dweb:/ipfs/QmeAxMx9ZEf4MsShtKrXUSNvacR9gUWoPh2KXn87RP6Qz7"
+			]
+		}
+	},
+	"version": 1
+}

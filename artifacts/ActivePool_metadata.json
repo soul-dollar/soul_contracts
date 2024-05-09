@@ -1,0 +1,449 @@
+{
+	"compiler": {
+		"version": "0.6.11+commit.5ef660b1"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_newActivePoolAddress",
+						"type": "address"
+					}
+				],
+				"name": "ActivePoolAddressChanged",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_ETH",
+						"type": "uint256"
+					}
+				],
+				"name": "ActivePoolETHBalanceUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_LUSDDebt",
+						"type": "uint256"
+					}
+				],
+				"name": "ActivePoolLUSDDebtUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_newBorrowerOperationsAddress",
+						"type": "address"
+					}
+				],
+				"name": "BorrowerOperationsAddressChanged",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_newDefaultPoolAddress",
+						"type": "address"
+					}
+				],
+				"name": "DefaultPoolAddressChanged",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_newBalance",
+						"type": "uint256"
+					}
+				],
+				"name": "ETHBalanceUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_to",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "EtherSent",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_newBalance",
+						"type": "uint256"
+					}
+				],
+				"name": "LUSDBalanceUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_newStabilityPoolAddress",
+						"type": "address"
+					}
+				],
+				"name": "StabilityPoolAddressChanged",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_newTroveManagerAddress",
+						"type": "address"
+					}
+				],
+				"name": "TroveManagerAddressChanged",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "NAME",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "borrowerOperationsAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "decreaseLUSDDebt",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "defaultPoolAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getETH",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getLUSDDebt",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "increaseLUSDDebt",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "isOwner",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_account",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "sendETH",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_borrowerOperationsAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_troveManagerAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_stabilityPoolAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_defaultPoolAddress",
+						"type": "address"
+					}
+				],
+				"name": "setAddresses",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "stabilityPoolAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "troveManagerAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"isOwner()": {
+					"details": "Returns true if the caller is the current owner."
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/contracts/ActivePool.sol": "ActivePool"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 1
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/contracts/ActivePool.sol": {
+			"keccak256": "0x9fa3204e223e7c32de12d97eea8a1032c6f2dae32f3f1bc1204cadb70be39497",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://734e901f255785d3dddec0cc414b062528b3ca4cadee744baf08ea756c0810e1",
+				"dweb:/ipfs/QmWhJfeQ5oFWpGUeHKM6RrnDPSMwu3L7PYpsLrYjuSREa8"
+			]
+		},
+		"contracts/contracts/Dependencies/CheckContract.sol": {
+			"keccak256": "0x3f48bd50ad146a5c01c6c6adc89e4a3871de4497b31c609bfce9cdc280274305",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://dde9848de01c0e6947c6ec5c8b7c54a7dd4ae1586f2e98f8b089bf6351b5ebe9",
+				"dweb:/ipfs/QmcoxPfiKP4LhCTwcAX8RiHG6w6hHQnt46UtCBphNMg4iW"
+			]
+		},
+		"contracts/contracts/Dependencies/Ownable.sol": {
+			"keccak256": "0x33ebd980403ab2462257b6b0352dd42d6d4ae86ce9de8c8fa7b8b5a84c585f1b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c164606fdfd19624a7cf85fb8258b1866431a45a208489cd7158db0f132fc212",
+				"dweb:/ipfs/QmYsmA6SdwwHSguo2SHDWP9wAxkvb1NPr7Yevw9vGhwCaV"
+			]
+		},
+		"contracts/contracts/Dependencies/SafeMath.sol": {
+			"keccak256": "0x666b890992a066cc791f36c2975cd595d9761a014c654c385ed36ffaf658f3fd",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://7b261f6ac077c4ebc81dd3f4c833f866139acd8b908feff72385c32f83c21c2d",
+				"dweb:/ipfs/Qmb91cmmBEFhwUWwVxgxTPmeNxzdiyCdxoVXB2gN3Gvg7e"
+			]
+		},
+		"contracts/contracts/Dependencies/console.sol": {
+			"keccak256": "0x6fa1de4ffe22b8f58b0b64d65db11dd5037be9b9db47b365a72adb489e217000",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e0779910f0c9ac7e45e633f4c01493f19beb6f3872b26bf818eeb9f3ed0e4a2e",
+				"dweb:/ipfs/QmQdVMf7Rh4uMFKkmoCitnA5cxUAg47KnH8LYxx7AT4AVw"
+			]
+		},
+		"contracts/contracts/Interfaces/IActivePool.sol": {
+			"keccak256": "0x6c7834463095e2f3f3aee7d8733d08b6388f511ef904b52dc85e638f65b8bb12",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b01f6b3c1e930583a232769d4aea920e0e2a1606d36419e9d52b65b731a0fc45",
+				"dweb:/ipfs/QmQKnjjV4HjdaxHd68t1TsJFKu9uB8X9Q5jnarRmeauc8V"
+			]
+		},
+		"contracts/contracts/Interfaces/IPool.sol": {
+			"keccak256": "0xe67abedc1c03d9fb93e6a04ea853d0cb82cca7c87eb2b771e4f07285fd596382",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://01179c7dd9ba1a45d0c58ba588942bcaeba3e429ada517bfcb6f2b8b4de165e0",
+				"dweb:/ipfs/QmNX8L3o8RXXEqzhcPugVzwhiGohzYokKfr7G4aTdkRBQM"
+			]
+		}
+	},
+	"version": 1
+}

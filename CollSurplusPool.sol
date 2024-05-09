@@ -7,6 +7,7 @@ import "./Dependencies/SafeMath.sol";
 import "./Dependencies/Ownable.sol";
 import "./Dependencies/CheckContract.sol";
 import "./Dependencies/console.sol";
+import "./Dependencies/IERC20.sol";
 
 
 contract CollSurplusPool is Ownable, CheckContract, ICollSurplusPool {
@@ -17,6 +18,9 @@ contract CollSurplusPool is Ownable, CheckContract, ICollSurplusPool {
     address public borrowerOperationsAddress;
     address public troveManagerAddress;
     address public activePoolAddress;
+
+    IERC20 public WETH;
+    bool public isInitialized;
 
     // deposited ether tracker
     uint256 internal ETH;
@@ -33,6 +37,13 @@ contract CollSurplusPool is Ownable, CheckContract, ICollSurplusPool {
     event EtherSent(address _to, uint _amount);
     
     // --- Contract setters ---
+
+    function initialize(address _weth) external onlyOwner {
+        require(!isInitialized, "Already Initialized");
+        checkContract(_weth);
+        isInitialized = true;
+        WETH = IERC20(_weth);
+    }
 
     function setAddresses(
         address _borrowerOperationsAddress,
@@ -83,6 +94,7 @@ contract CollSurplusPool is Ownable, CheckContract, ICollSurplusPool {
         _requireCallerIsBorrowerOperations();
         uint claimableColl = balances[_account];
         require(claimableColl > 0, "CollSurplusPool: No collateral available to claim");
+        require(WETH.balanceOf(address(this)) >= claimableColl,"CollSurplusPool: Insufficient funds available");
 
         balances[_account] = 0;
         emit CollBalanceUpdated(_account, 0);
@@ -90,8 +102,7 @@ contract CollSurplusPool is Ownable, CheckContract, ICollSurplusPool {
         ETH = ETH.sub(claimableColl);
         emit EtherSent(_account, claimableColl);
 
-        (bool success, ) = _account.call{ value: claimableColl }("");
-        require(success, "CollSurplusPool: sending ETH failed");
+        require(WETH.transfer(_account, claimableColl), "CollSurplusPool: sending ETH failed");
     }
 
     // --- 'require' functions ---
@@ -114,10 +125,11 @@ contract CollSurplusPool is Ownable, CheckContract, ICollSurplusPool {
             "CollSurplusPool: Caller is not Active Pool");
     }
 
-    // --- Fallback function ---
+    // --- Receive ERC20 tokens function ---
 
-    receive() external payable {
+    function receiveERC20(uint _amount) external override {
         _requireCallerIsActivePool();
-        ETH = ETH.add(msg.value);
+        require(WETH.balanceOf(address(this)) == ETH.add(_amount),"CollSurplusPool: Funds not received");
+        ETH = ETH.add(_amount);
     }
 }

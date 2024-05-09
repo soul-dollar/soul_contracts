@@ -45,6 +45,7 @@ contract TroveManager is LiquityBase, Ownable, CheckContract, ITroveManager {
      */
     uint constant public MINUTE_DECAY_FACTOR = 999037758833783000;
     uint constant public REDEMPTION_FEE_FLOOR = DECIMAL_PRECISION / 1000 * 5; // 0.5%
+    uint constant public MAX_REDEMPTION_REWARD = DECIMAL_PRECISION / 100 * 3; // 3%
     uint constant public MAX_BORROWING_FEE = DECIMAL_PRECISION / 100 * 5; // 5%
 
     // During bootsrap period redemptions are not allowed
@@ -111,6 +112,10 @@ contract TroveManager is LiquityBase, Ownable, CheckContract, ITroveManager {
     // Error trackers for the trove redistribution calculation
     uint public lastETHError_Redistribution;
     uint public lastLUSDDebtError_Redistribution;
+
+    // Reward rate paid to trove owners if trove is used for redemptions.
+    // Makes redemptions more like swaps and trove holders are lp providers
+    uint public redemptionRewardRate
 
     /*
     * --- Variable container structs for liquidations ---
@@ -194,6 +199,8 @@ contract TroveManager is LiquityBase, Ownable, CheckContract, ITroveManager {
         uint ETHLot;
         bool cancelledPartial;
     }
+
+    address public admin;
 
     // --- Events ---
 
@@ -285,6 +292,26 @@ contract TroveManager is LiquityBase, Ownable, CheckContract, ITroveManager {
         emit LQTYStakingAddressChanged(_lqtyStakingAddress);
 
         _renounceOwnership();
+    }
+
+
+    function setAdmin(address _admin) public onlyOwner {
+        admin = _admin;
+    }
+
+    function setPriceFeed(address _priceFeedAddress) public {
+        require(msg.sender==admin);
+        priceFeed = IPriceFeed(_priceFeedAddress);
+    }
+
+    function renounceAdmin() public {
+        require(msg.sender==admin);
+        admin = address(0);
+    }
+
+    function setRedemptionReward(uint _redemptionRewardRate) public onlyOwner {
+        require (_redemptionRewardRate >= 0 && _redemptionRewardRate <= MAX_REDEMPTION_REWARD,"TroveManager: Invalid reward rate");
+        redemptionRewardRate = _redemptionRewardRate;
     }
 
     // --- Getters ---
@@ -828,7 +855,7 @@ contract TroveManager is LiquityBase, Ownable, CheckContract, ITroveManager {
         singleRedemption.LUSDLot = LiquityMath._min(_maxLUSDamount, Troves[_borrower].debt.sub(LUSD_GAS_COMPENSATION));
 
         // Get the ETHLot of equivalent value in USD
-        singleRedemption.ETHLot = singleRedemption.LUSDLot.mul(DECIMAL_PRECISION).div(_price);
+        singleRedemption.ETHLot = singleRedemption.LUSDLot.mul(DECIMAL_PRECISION.sub(redemptionRewardRate)).div(_price);
 
         // Decrease the debt and collateral of the current Trove according to the LUSD lot and corresponding ETH to send
         uint newDebt = (Troves[_borrower].debt).sub(singleRedemption.LUSDLot);
@@ -1004,8 +1031,10 @@ contract TroveManager is LiquityBase, Ownable, CheckContract, ITroveManager {
 
         // Calculate the ETH fee
         totals.ETHFee = _getRedemptionFee(totals.totalETHDrawn);
+        uint troveOwnerRewardFees = _getTroveOwnerRewardFees(totals.totalETHDrawn);
+        require(troveOwnerRewardFees.add(totals.ETHFee) < totals.totalETHDrawn, "TroveManager: Fees would use all returned collateral");
 
-        _requireUserAcceptsFee(totals.ETHFee, totals.totalETHDrawn, _maxFeePercentage);
+        _requireUserAcceptsFee(troveOwnerRewardFees.add(totals.ETHFee), totals.totalETHDrawn, _maxFeePercentage);
 
         // Send the ETH fee to the LQTY staking contract
         contractsCache.activePool.sendETH(address(contractsCache.lqtyStaking), totals.ETHFee);
@@ -1405,6 +1434,12 @@ contract TroveManager is LiquityBase, Ownable, CheckContract, ITroveManager {
         return redemptionFee;
     }
 
+    function _getTroveOwnerRewardFees(uint _ETHDrawn) internal pure returns (uint) {
+        uint troveOwnerRewardFees = redemptionRewardRate.mul(_ETHDrawn).div(DECIMAL_PRECISION.sub(redemptionRewardRate));
+        require(troveOwnerRewardFees < _ETHDrawn, "TroveManager: Fees would eat up all returned collateral");
+        return troveOwnerRewardFees;
+    }
+
     // --- Borrowing fee functions ---
 
     function getBorrowingRate() public view override returns (uint) {
@@ -1503,8 +1538,8 @@ contract TroveManager is LiquityBase, Ownable, CheckContract, ITroveManager {
     }
 
     function _requireValidMaxFeePercentage(uint _maxFeePercentage) internal pure {
-        require(_maxFeePercentage >= REDEMPTION_FEE_FLOOR && _maxFeePercentage <= DECIMAL_PRECISION,
-            "Max fee percentage must be between 0.5% and 100%");
+        require(_maxFeePercentage >= REDEMPTION_FEE_FLOOR.add(redemptionRewardRate) && _maxFeePercentage <= DECIMAL_PRECISION,
+            "Max fee percentage must be between (0.5% + redemptionRewardRate) and 100%");
     }
 
     // --- Trove property getters ---

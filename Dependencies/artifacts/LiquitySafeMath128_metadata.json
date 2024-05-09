@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.6.11+commit.5ef660b1"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/contracts/Dependencies/LiquitySafeMath128.sol": "LiquitySafeMath128"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/contracts/Dependencies/LiquitySafeMath128.sol": {
+			"keccak256": "0x6e51d34d6fe3a2afbf5b64d1e14984a170f30247b318f62e04b9f4afdb660fc5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b03edf5caeec9b75daa6df4cd6791bd1177f81fbcaab199f9468f0bf16ae5b75",
+				"dweb:/ipfs/QmXy1BQ9mo8usJd6QMz2QiY3YYD7fMAVrRizWw21mW6YTB"
+			]
+		}
+	},
+	"version": 1
+}

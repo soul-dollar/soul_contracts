@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.24+commit.e11b9ed9"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/contracts/neonPriceFeed.sol": "NeonPriceFeed"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/contracts/neonPriceFeed.sol": {
+			"keccak256": "0x6a3d88c1d395160927336e425fd02b8f90d5c87d63e855fa0e27791d3d10ab73",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0e87b9bb290e44322694b1743a284503b5d894ee7d1c6c0d06951956a8ce52fd",
+				"dweb:/ipfs/QmejPgueaCBPchTbMiMQDZmYFRiN1E6pgxw3FBYssGShRZ"
+			]
+		}
+	},
+	"version": 1
+}

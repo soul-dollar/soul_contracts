@@ -7,6 +7,7 @@ import "../Dependencies/SafeMath.sol";
 import "../Dependencies/Ownable.sol";
 import "../Dependencies/CheckContract.sol";
 import "../Dependencies/console.sol";
+import "../Dependencies/IERC20.sol"; 
 import "../Interfaces/ILQTYToken.sol";
 import "../Interfaces/ILQTYStaking.sol";
 import "../Dependencies/LiquityMath.sol";
@@ -16,7 +17,7 @@ contract LQTYStaking is ILQTYStaking, Ownable, CheckContract, BaseMath {
     using SafeMath for uint;
 
     // --- Data ---
-    string constant public NAME = "LQTYStaking";
+    string constant public NAME = "MSTStaking";
 
     mapping( address => uint) public stakes;
     uint public totalLQTYStaked;
@@ -32,9 +33,12 @@ contract LQTYStaking is ILQTYStaking, Ownable, CheckContract, BaseMath {
         uint F_LUSD_Snapshot;
     }
     
+    IERC20 public WETH;
     ILQTYToken public lqtyToken;
     ILUSDToken public lusdToken;
-
+    IERC20 public MST;  
+    
+    address public lqtyVault;  
     address public troveManagerAddress;
     address public borrowerOperationsAddress;
     address public activePoolAddress;
@@ -59,22 +63,31 @@ contract LQTYStaking is ILQTYStaking, Ownable, CheckContract, BaseMath {
 
     function setAddresses
     (
+        address _weth,
+        address _mst, 
         address _lqtyTokenAddress,
         address _lusdTokenAddress,
         address _troveManagerAddress, 
         address _borrowerOperationsAddress,
-        address _activePoolAddress
+        address _activePoolAddress,
+        address _lqtyVault  
     ) 
         external 
         onlyOwner 
         override 
-    {
+    { 
+        checkContract(_weth);
+        checkContract(_mst); 
+        checkContract(_lqtyVault);  
         checkContract(_lqtyTokenAddress);
         checkContract(_lusdTokenAddress);
         checkContract(_troveManagerAddress);
         checkContract(_borrowerOperationsAddress);
         checkContract(_activePoolAddress);
 
+        WETH = IERC20(_weth); 
+        MST = IERC20(_mst); 
+        lqtyVault = _lqtyVault; 
         lqtyToken = ILQTYToken(_lqtyTokenAddress);
         lusdToken = ILUSDToken(_lusdTokenAddress);
         troveManagerAddress = _troveManagerAddress;
@@ -113,8 +126,9 @@ contract LQTYStaking is ILQTYStaking, Ownable, CheckContract, BaseMath {
         totalLQTYStaked = totalLQTYStaked.add(_LQTYamount);
         emit TotalLQTYStakedUpdated(totalLQTYStaked);
 
-        // Transfer LQTY from caller to this contract
-        lqtyToken.sendToLQTYStaking(msg.sender, _LQTYamount);
+        require(MST.transferFrom(msg.sender, address(this), _LQTYamount),"Token transfer failed");
+        
+        lqtyToken.sendToLQTYStaking(lqtyVault, _LQTYamount);
 
         emit StakeChanged(msg.sender, newStake);
         emit StakingGainsWithdrawn(msg.sender, LUSDGain, ETHGain);
@@ -148,8 +162,10 @@ contract LQTYStaking is ILQTYStaking, Ownable, CheckContract, BaseMath {
             totalLQTYStaked = totalLQTYStaked.sub(LQTYToWithdraw);
             emit TotalLQTYStakedUpdated(totalLQTYStaked);
 
-            // Transfer unstaked LQTY to user
-            lqtyToken.transfer(msg.sender, LQTYToWithdraw);
+            // Transfer unstaked LQTY back to vault
+            lqtyToken.transfer(lqtyVault, LQTYToWithdraw); 
+
+            require(MST.transfer(msg.sender, LQTYToWithdraw),"Token transfer failed");
 
             emit StakeChanged(msg.sender, newStake);
         }
@@ -214,9 +230,9 @@ contract LQTYStaking is ILQTYStaking, Ownable, CheckContract, BaseMath {
     }
 
     function _sendETHGainToUser(uint ETHGain) internal {
+        require(WETH.balanceOf(address(this)) >= ETHGain,"LQTYStaking: Insufficient funds available");
         emit EtherSent(msg.sender, ETHGain);
-        (bool success, ) = msg.sender.call{value: ETHGain}("");
-        require(success, "LQTYStaking: Failed to send accumulated ETHGain");
+        require(WETH.transfer(msg.sender, ETHGain), "LQTYStaking: Failed to send accumulated ETHGain");        
     }
 
     // --- 'require' functions ---
@@ -241,7 +257,7 @@ contract LQTYStaking is ILQTYStaking, Ownable, CheckContract, BaseMath {
         require(_amount > 0, 'LQTYStaking: Amount must be non-zero');
     }
 
-    receive() external payable {
+    function receiveERC20(uint _amount) external override {
         _requireCallerIsActivePool();
     }
 }

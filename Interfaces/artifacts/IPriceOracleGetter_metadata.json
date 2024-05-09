@@ -1,0 +1,77 @@
+{
+	"compiler": {
+		"version": "0.6.11+commit.5ef660b1"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "asset",
+						"type": "address"
+					}
+				],
+				"name": "getAssetPrice",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"getAssetPrice(address)": {
+					"details": "returns the asset price USD",
+					"params": {
+						"asset": "the address of the asset"
+					},
+					"returns": {
+						"_0": "the price of the asset*"
+					}
+				}
+			},
+			"title": "IPriceOracleGetter interface",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"notice": "Interface for the Meridian price oracle.*",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/contracts/Interfaces/IPriceOracleGetter.sol": "IPriceOracleGetter"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/contracts/Interfaces/IPriceOracleGetter.sol": {
+			"keccak256": "0xf3f3c38249fd4cb7876f1504137e8d9f5fcb58939fd8a066f705a69ccd9faf8f",
+			"license": "agpl-3.0",
+			"urls": [
+				"bzz-raw://f8048ddd04ce34baefd94e05fba049c17e34d947d4d425cf6a614a98a9632b98",
+				"dweb:/ipfs/QmZs4Mw1ubnatKbGDeTdntYZzTFe4TNXVbhxLc6xw98PoG"
+			]
+		}
+	},
+	"version": 1
+}

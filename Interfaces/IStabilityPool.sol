@@ -190,8 +190,8 @@ interface IStabilityPool {
     function getCompoundedFrontEndStake(address _frontEnd) external view returns (uint);
 
     /*
-     * Fallback function
      * Only callable by Active Pool, it just accounts for ETH received
-     * receive() external payable;
      */
+
+     function receiveERC20(uint _amount) external;
 }

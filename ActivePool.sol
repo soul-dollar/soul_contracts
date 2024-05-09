@@ -3,10 +3,15 @@
 pragma solidity 0.6.11;
 
 import './Interfaces/IActivePool.sol';
+import './Interfaces/ICollSurplusPool.sol';
+import './Interfaces/ILQTYStaking.sol';
+import './Interfaces/IDefaultPool.sol';
+import './Interfaces/IStabilityPool.sol';
 import "./Dependencies/SafeMath.sol";
 import "./Dependencies/Ownable.sol";
 import "./Dependencies/CheckContract.sol";
 import "./Dependencies/console.sol";
+import "./Dependencies/IERC20.sol";
 
 /*
  * The Active Pool holds the ETH collateral and LUSD debt (but not LUSD tokens) for all active troves.
@@ -20,12 +25,17 @@ contract ActivePool is Ownable, CheckContract, IActivePool {
 
     string constant public NAME = "ActivePool";
 
+    IERC20 public WETH;
+
+    address public collSurplusPoolAddress;
+    address public lqtyStakingAddress;
     address public borrowerOperationsAddress;
     address public troveManagerAddress;
     address public stabilityPoolAddress;
     address public defaultPoolAddress;
     uint256 internal ETH;  // deposited ether tracker
     uint256 internal LUSDDebt;
+    bool public isInitialized;
 
     // --- Events ---
 
@@ -36,7 +46,16 @@ contract ActivePool is Ownable, CheckContract, IActivePool {
 
     // --- Contract setters ---
 
+    function initialize(address _weth) external onlyOwner {
+        require(!isInitialized, "Already Initialized");
+        checkContract(_weth);
+        isInitialized = true;
+        WETH = IERC20(_weth);
+    }
+
     function setAddresses(
+        address _collSurplusPoolAddress,
+        address _lqtyStakingAddress,
         address _borrowerOperationsAddress,
         address _troveManagerAddress,
         address _stabilityPoolAddress,
@@ -45,11 +64,15 @@ contract ActivePool is Ownable, CheckContract, IActivePool {
         external
         onlyOwner
     {
+        checkContract(_collSurplusPoolAddress);
+        checkContract(_lqtyStakingAddress);
         checkContract(_borrowerOperationsAddress);
         checkContract(_troveManagerAddress);
         checkContract(_stabilityPoolAddress);
         checkContract(_defaultPoolAddress);
 
+        collSurplusPoolAddress = _collSurplusPoolAddress;
+        lqtyStakingAddress = _lqtyStakingAddress;
         borrowerOperationsAddress = _borrowerOperationsAddress;
         troveManagerAddress = _troveManagerAddress;
         stabilityPoolAddress = _stabilityPoolAddress;
@@ -82,12 +105,13 @@ contract ActivePool is Ownable, CheckContract, IActivePool {
 
     function sendETH(address _account, uint _amount) external override {
         _requireCallerIsBOorTroveMorSP();
+        require(WETH.balanceOf(address(this)) >= _amount,"ActivePool: Insufficient funds available");
         ETH = ETH.sub(_amount);
         emit ActivePoolETHBalanceUpdated(ETH);
         emit EtherSent(_account, _amount);
 
-        (bool success, ) = _account.call{ value: _amount }("");
-        require(success, "ActivePool: sending ETH failed");
+        require(WETH.transfer(_account, _amount), "ActivePool: sending WETH failed");
+        executeInternalUpdates(_account, _amount);
     }
 
     function increaseLUSDDebt(uint _amount) external override {
@@ -126,11 +150,24 @@ contract ActivePool is Ownable, CheckContract, IActivePool {
             "ActivePool: Caller is neither BorrowerOperations nor TroveManager");
     }
 
-    // --- Fallback function ---
+    function executeInternalUpdates(address _receiveAddress, uint _amount) internal {
+       if (_receiveAddress == collSurplusPoolAddress){
+        ICollSurplusPool(collSurplusPoolAddress).receiveERC20(_amount);
+       } else if (_receiveAddress == lqtyStakingAddress){
+        ILQTYStaking(lqtyStakingAddress).receiveERC20(_amount);
+       } else if (_receiveAddress == defaultPoolAddress) {
+        IDefaultPool(defaultPoolAddress).receiveERC20(_amount);
+       } else if (_receiveAddress == stabilityPoolAddress) {
+        IStabilityPool(stabilityPoolAddress).receiveERC20(_amount);
+       }
+    }
 
-    receive() external payable {
+    // --- Receive ERC20 tokens function ---
+
+    function receiveERC20(uint _amount) external override {
         _requireCallerIsBorrowerOperationsOrDefaultPool();
-        ETH = ETH.add(msg.value);
+        require(WETH.balanceOf(address(this)) == ETH.add(_amount),"ActivePool: Funds not received");
+        ETH = ETH.add(_amount);
         emit ActivePoolETHBalanceUpdated(ETH);
     }
 }

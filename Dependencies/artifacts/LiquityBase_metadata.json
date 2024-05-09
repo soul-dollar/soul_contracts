@@ -1,0 +1,287 @@
+{
+	"compiler": {
+		"version": "0.6.11+commit.5ef660b1"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "BORROWING_FEE_FLOOR",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "CCR",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "DECIMAL_PRECISION",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "LUSD_GAS_COMPENSATION",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "MCR",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "MIN_NET_DEBT",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "PERCENT_DIVISOR",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "_100pct",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "activePool",
+				"outputs": [
+					{
+						"internalType": "contract IActivePool",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "defaultPool",
+				"outputs": [
+					{
+						"internalType": "contract IDefaultPool",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getEntireSystemColl",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "entireSystemColl",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getEntireSystemDebt",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "entireSystemDebt",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "priceFeed",
+				"outputs": [
+					{
+						"internalType": "contract IPriceFeed",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/contracts/Dependencies/LiquityBase.sol": "LiquityBase"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/contracts/Dependencies/BaseMath.sol": {
+			"keccak256": "0x7e1369ca5cb09e818e345a2def19a261401f79c985a6030b55b7311dd6f53be4",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://21c4e37c07fa164f1ae02336d8451d43615cd7bf11f9f404e3e082864d898f9e",
+				"dweb:/ipfs/QmbePtvXNQD1KVURtNd1EKEVVGse8MJrW5EUQzuGgP8iiW"
+			]
+		},
+		"contracts/contracts/Dependencies/LiquityBase.sol": {
+			"keccak256": "0xf47ba85fa1f39bef2abf0681839de78289ddbb4b5f29a6258914f059f1f6f342",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://fa4cb0100247696b2b6cf98e4e77c64ba8b1e2444b5aa7626d12c70dcfe98500",
+				"dweb:/ipfs/QmWQa33v2cdtpcRWpmS8uofdzuyAemeCv4eQjMuHe7Pqkp"
+			]
+		},
+		"contracts/contracts/Dependencies/LiquityMath.sol": {
+			"keccak256": "0x7a95ed70d8937e0896c054b433ad0dfc87a9cfd028cae1694098e9d5d68127cd",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://64fd33f9a77c2f0cc9e91f5053f0ae66a40cbd36751b3bffea7a7b834b771f69",
+				"dweb:/ipfs/QmRbtN1Vr9ysLxM3hSSPrqnbmDW4v77Mt1dEbf6tuDoo9g"
+			]
+		},
+		"contracts/contracts/Dependencies/SafeMath.sol": {
+			"keccak256": "0x666b890992a066cc791f36c2975cd595d9761a014c654c385ed36ffaf658f3fd",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://7b261f6ac077c4ebc81dd3f4c833f866139acd8b908feff72385c32f83c21c2d",
+				"dweb:/ipfs/Qmb91cmmBEFhwUWwVxgxTPmeNxzdiyCdxoVXB2gN3Gvg7e"
+			]
+		},
+		"contracts/contracts/Dependencies/console.sol": {
+			"keccak256": "0x6fa1de4ffe22b8f58b0b64d65db11dd5037be9b9db47b365a72adb489e217000",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e0779910f0c9ac7e45e633f4c01493f19beb6f3872b26bf818eeb9f3ed0e4a2e",
+				"dweb:/ipfs/QmQdVMf7Rh4uMFKkmoCitnA5cxUAg47KnH8LYxx7AT4AVw"
+			]
+		},
+		"contracts/contracts/Interfaces/IActivePool.sol": {
+			"keccak256": "0x6c7834463095e2f3f3aee7d8733d08b6388f511ef904b52dc85e638f65b8bb12",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b01f6b3c1e930583a232769d4aea920e0e2a1606d36419e9d52b65b731a0fc45",
+				"dweb:/ipfs/QmQKnjjV4HjdaxHd68t1TsJFKu9uB8X9Q5jnarRmeauc8V"
+			]
+		},
+		"contracts/contracts/Interfaces/IDefaultPool.sol": {
+			"keccak256": "0x382ad0b33af5ad7c9489822f35db19a78b259130acf7979849be204ec8fb7279",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2ddd6079f7c57535f3216f614c2c695ceb1e910696658f6bad1a96c2250d8dd6",
+				"dweb:/ipfs/QmPjWVCfNbjntjJQrBaHXgoP1VWnHdKaHxpk5wTjwQ3h1x"
+			]
+		},
+		"contracts/contracts/Interfaces/ILiquityBase.sol": {
+			"keccak256": "0x7757d43ac67b34b79f1d7812cf89f9669da7230df3a18044387d2866de85587d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4a36d4c63a019267109bd9996473391ef587795fdc07dc65da1a01be9d8170df",
+				"dweb:/ipfs/QmWdZcvZ4GYc4FJyY8uJn1bNKdCkxnamJKuHvW8RLQvBf6"
+			]
+		},
+		"contracts/contracts/Interfaces/IPool.sol": {
+			"keccak256": "0xe67abedc1c03d9fb93e6a04ea853d0cb82cca7c87eb2b771e4f07285fd596382",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://01179c7dd9ba1a45d0c58ba588942bcaeba3e429ada517bfcb6f2b8b4de165e0",
+				"dweb:/ipfs/QmNX8L3o8RXXEqzhcPugVzwhiGohzYokKfr7G4aTdkRBQM"
+			]
+		},
+		"contracts/contracts/Interfaces/IPriceFeed.sol": {
+			"keccak256": "0x8addf8adace4b531698302a46cc65d357ef4302aea661502263420e931318172",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0054616ceb3db586a38f205e807c0724752d6d172b34299b9acdcfefdb8fffaf",
+				"dweb:/ipfs/QmY9BPjvfui1ReXjrTb4wYrCzZXNow7xqkqZyPG1eHUB4i"
+			]
+		}
+	},
+	"version": 1
+}
