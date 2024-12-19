@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.6.11;
+pragma solidity 0.8.20;
 
 import "../Interfaces/ICommunityIssuance.sol";
 import "../Dependencies/BaseMath.sol";
@@ -47,11 +47,7 @@ contract CommunityIssuance is ICommunityIssuance, Ownable, CheckContract, BaseMa
 
     // --- Events ---
 
-    event LQTYTokenAddressSet(address _rewardsTokenAddress);  
-    event StabilityPoolAddressSet(address _stabilityPoolAddress);
-    event TotalLQTYIssuedUpdated(uint _totalRewardsIssued); 
-
-    constructor() public {
+    constructor() {
         deploymentTime = block.timestamp;
     }
 

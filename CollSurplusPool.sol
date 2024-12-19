@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.6.11;
+pragma solidity 0.8.20;
 
 import "./Interfaces/ICollSurplusPool.sol";
 import "./Dependencies/SafeMath.sol";
@@ -27,15 +27,6 @@ contract CollSurplusPool is Ownable, CheckContract, ICollSurplusPool {
     // Collateral surplus claimable by trove owners
     mapping (address => uint) internal balances;
 
-    // --- Events ---
-
-    event BorrowerOperationsAddressChanged(address _newBorrowerOperationsAddress);
-    event TroveManagerAddressChanged(address _newTroveManagerAddress);
-    event ActivePoolAddressChanged(address _newActivePoolAddress);
-
-    event CollBalanceUpdated(address indexed _account, uint _newBalance);
-    event EtherSent(address _to, uint _amount);
-    
     // --- Contract setters ---
 
     function initialize(address _weth) external onlyOwner {
@@ -43,6 +34,7 @@ contract CollSurplusPool is Ownable, CheckContract, ICollSurplusPool {
         checkContract(_weth);
         isInitialized = true;
         WETH = IERC20(_weth);
+        _renounceOwnership();
     }
 
     function setAddresses(
@@ -66,7 +58,6 @@ contract CollSurplusPool is Ownable, CheckContract, ICollSurplusPool {
         emit TroveManagerAddressChanged(_troveManagerAddress);
         emit ActivePoolAddressChanged(_activePoolAddress);
 
-        _renounceOwnership();
     }
 
     /* Returns the ETH state variable at ActivePool address.
@@ -129,7 +120,7 @@ contract CollSurplusPool is Ownable, CheckContract, ICollSurplusPool {
 
     function receiveERC20(uint _amount) external override {
         _requireCallerIsActivePool();
-        require(WETH.balanceOf(address(this)) == ETH.add(_amount),"CollSurplusPool: Funds not received");
+        require(WETH.balanceOf(address(this)) >= ETH.add(_amount),"CollSurplusPool: Funds not received");
         ETH = ETH.add(_amount);
     }
 }

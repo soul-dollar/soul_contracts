@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.6.11+commit.5ef660b1"
+		"version": "0.8.20+commit.a1b79de6"
 	},
 	"language": "Solidity",
 	"output": {
@@ -113,9 +113,9 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/contracts/Interfaces/ILockupContractFactory.sol": "ILockupContractFactory"
+			"contracts/Interfaces/ILockupContractFactory.sol": "ILockupContractFactory"
 		},
-		"evmVersion": "istanbul",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -127,12 +127,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/contracts/Interfaces/ILockupContractFactory.sol": {
-			"keccak256": "0x08475f5d8b73d5cbeaa97dafa666e016d1b71a129b8b8b6f57b70b6fd57be7fd",
+		"contracts/Interfaces/ILockupContractFactory.sol": {
+			"keccak256": "0x0efffa11b12679d03f433a4cbb80bd67cbb9c391337e01d84179c0b701930c83",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://540e3fba93490629fe99902d1893eada5501658c0856160097a97f9e42c5d451",
-				"dweb:/ipfs/Qme2qrK3SU936Z7fWq56D883VrGjrBwqSDJSp4gSt3JJwx"
+				"bzz-raw://0eaebf6b0b89f05c7c1688c1b8d050d638d14227eacb6c76dd02ff46eedb281a",
+				"dweb:/ipfs/QmXEcuAC5FabccQFZdxDyttwVKVGdfNNeBbi7LbstEQiVW"
 			]
 		}
 	},

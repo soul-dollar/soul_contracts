@@ -1,0 +1,75 @@
+{
+	"compiler": {
+		"version": "0.8.20+commit.a1b79de6"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_requestId",
+						"type": "uint256"
+					}
+				],
+				"name": "getTellorCurrentValue",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Interfaces/ITellorCaller.sol": "ITellorCaller"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Interfaces/ITellorCaller.sol": {
+			"keccak256": "0x5d10a0164c12e374239b57275ebe35df0b100cc7ec9cad4e760b7d37519ec25d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://093752adf334cc51a9b15d28231d32e936fd997a9323c25ecac70ffa4c72dd97",
+				"dweb:/ipfs/Qmew1hcfrVCG3veYNnEv1BgigmrZ6ik4hRyvMhzGNqnNb4"
+			]
+		}
+	},
+	"version": 1
+}

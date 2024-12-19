@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.6.11+commit.5ef660b1"
+		"version": "0.8.20+commit.a1b79de6"
 	},
 	"language": "Solidity",
 	"output": {
@@ -18,9 +18,9 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/contracts/Dependencies/LiquitySafeMath128.sol": "LiquitySafeMath128"
+			"contracts/Dependencies/LiquitySafeMath128.sol": "LiquitySafeMath128"
 		},
-		"evmVersion": "istanbul",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -32,12 +32,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/contracts/Dependencies/LiquitySafeMath128.sol": {
-			"keccak256": "0x6e51d34d6fe3a2afbf5b64d1e14984a170f30247b318f62e04b9f4afdb660fc5",
+		"contracts/Dependencies/LiquitySafeMath128.sol": {
+			"keccak256": "0x88a29404492e29dd31610b69622f5a4243f3935e8692f9bf66591e434c8bdcde",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://b03edf5caeec9b75daa6df4cd6791bd1177f81fbcaab199f9468f0bf16ae5b75",
-				"dweb:/ipfs/QmXy1BQ9mo8usJd6QMz2QiY3YYD7fMAVrRizWw21mW6YTB"
+				"bzz-raw://d6fc9563436e7bef874c80a57a4e1796aa648e5dc2efc35190bdcf06dd126c2a",
+				"dweb:/ipfs/QmZY87qZcVnbcP4JVGoFofyPWLdp2nhm5WZQyqw3X7GPLg"
 			]
 		}
 	},

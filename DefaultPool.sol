@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.6.11;
+pragma solidity 0.8.20;
 
 import './Interfaces/IActivePool.sol';
 import './Interfaces/IDefaultPool.sol';
@@ -29,10 +29,6 @@ contract DefaultPool is Ownable, CheckContract, IDefaultPool {
     uint256 internal ETH;  // deposited ETH tracker
     uint256 internal LUSDDebt;  // debt
 
-    event TroveManagerAddressChanged(address _newTroveManagerAddress);
-    event DefaultPoolLUSDDebtUpdated(uint _LUSDDebt);
-    event DefaultPoolETHBalanceUpdated(uint _ETH);
-
     // --- Dependency setters ---
 
     function initialize(address _weth) external onlyOwner {
@@ -40,6 +36,7 @@ contract DefaultPool is Ownable, CheckContract, IDefaultPool {
         checkContract(_weth);
         isInitialized = true;
         WETH = IERC20(_weth);
+        _renounceOwnership();
     }
 
     function setAddresses(
@@ -58,7 +55,6 @@ contract DefaultPool is Ownable, CheckContract, IDefaultPool {
         emit TroveManagerAddressChanged(_troveManagerAddress);
         emit ActivePoolAddressChanged(_activePoolAddress);
 
-        _renounceOwnership();
     }
 
     // --- Getters for public variables. Required by IPool interface ---
@@ -116,7 +112,7 @@ contract DefaultPool is Ownable, CheckContract, IDefaultPool {
 
     function receiveERC20(uint _amount) external override {
         _requireCallerIsActivePool();
-        require(WETH.balanceOf(address(this)) == ETH.add(_amount),"DefaultPool: Funds not received");
+        require(WETH.balanceOf(address(this)) >= ETH.add(_amount),"DefaultPool: Funds not received");
         ETH = ETH.add(_amount);
         emit DefaultPoolETHBalanceUpdated(ETH);
     }

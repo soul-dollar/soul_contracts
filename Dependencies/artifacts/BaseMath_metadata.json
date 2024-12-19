@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.6.11+commit.5ef660b1"
+		"version": "0.8.20+commit.a1b79de6"
 	},
 	"language": "Solidity",
 	"output": {
@@ -32,9 +32,9 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/contracts/Dependencies/BaseMath.sol": "BaseMath"
+			"contracts/Dependencies/BaseMath.sol": "BaseMath"
 		},
-		"evmVersion": "istanbul",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -46,12 +46,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/contracts/Dependencies/BaseMath.sol": {
-			"keccak256": "0x7e1369ca5cb09e818e345a2def19a261401f79c985a6030b55b7311dd6f53be4",
+		"contracts/Dependencies/BaseMath.sol": {
+			"keccak256": "0x54ea78079ea5a8ab47223ec49eeff5f5969b128926f5b28c0f22d4cc5e255bec",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://21c4e37c07fa164f1ae02336d8451d43615cd7bf11f9f404e3e082864d898f9e",
-				"dweb:/ipfs/QmbePtvXNQD1KVURtNd1EKEVVGse8MJrW5EUQzuGgP8iiW"
+				"bzz-raw://fb42ea60f52f231ec70dc669273604e3efe48f296f5b11b84713e4aed596bfb4",
+				"dweb:/ipfs/QmWAFfmm53cJbg9JB8oMzCPVs11j9tUPyBzEbddKAKNutm"
 			]
 		}
 	},

@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.6.11;
+pragma solidity 0.8.20;
 
 import "./Dependencies/Ownable.sol";
 import "./Interfaces/IPriceFeed.sol";
@@ -49,7 +49,7 @@ contract PriceFeed is Ownable {
     address baseCurrency,
     uint256 baseCurrencyUnit,
     uint256 priceAgeLimit
-  ) public {
+  )  {
     _setDIAOracle(DIAOracleAddress);
     _setFallbackOracle(fallbackOracle);
     maxPriceAgeLimit = priceAgeLimit;

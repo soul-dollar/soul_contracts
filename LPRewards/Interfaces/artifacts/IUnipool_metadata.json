@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.6.11+commit.5ef660b1"
+		"version": "0.8.20+commit.a1b79de6"
 	},
 	"language": "Solidity",
 	"output": {
@@ -101,26 +101,26 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/contracts/LPRewards/Interfaces/IUnipool.sol": "IUnipool"
+			"contracts/LPRewards/Interfaces/IUnipool.sol": "IUnipool"
 		},
-		"evmVersion": "istanbul",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
 			"enabled": true,
-			"runs": 1
+			"runs": 200
 		},
 		"remappings": []
 	},
 	"sources": {
-		"contracts/contracts/LPRewards/Interfaces/IUnipool.sol": {
-			"keccak256": "0xabb5bfa6db447d645385e0aef3c246b4f437da1f0c76ca0d9151312837716083",
+		"contracts/LPRewards/Interfaces/IUnipool.sol": {
+			"keccak256": "0xe636c2735daeaf35ff15f8e2fab41afdb606fe5bd1f4f4fe76838a073a637449",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://4f38ae1152cc239025e5d99fb436df508625c79f637bdba3799919c56d82bbe9",
-				"dweb:/ipfs/QmVYQxG7QQg5V6aQJcRsm5FBuB9Jg2hBkB5zLauo8ecAkq"
+				"bzz-raw://79675fc7ddd06ead93e23232c0ac0517ec786ee244576945f8e4efe45264fde1",
+				"dweb:/ipfs/QmfZsoCNR85ccxtVAUhd6gcL8KRCkR5XKTq8oYG79Fvh4D"
 			]
 		}
 	},

@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.6.11+commit.5ef660b1"
+		"version": "0.8.20+commit.a1b79de6"
 	},
 	"language": "Solidity",
 	"output": {
@@ -155,9 +155,9 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/contracts/Interfaces/IPool.sol": "IPool"
+			"contracts/Interfaces/IPool.sol": "IPool"
 		},
-		"evmVersion": "istanbul",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -169,12 +169,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/contracts/Interfaces/IPool.sol": {
-			"keccak256": "0xe67abedc1c03d9fb93e6a04ea853d0cb82cca7c87eb2b771e4f07285fd596382",
+		"contracts/Interfaces/IPool.sol": {
+			"keccak256": "0x54669acd7a4653a818191744087611550a7a303e1448a257ddbe6a72bb3af515",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://01179c7dd9ba1a45d0c58ba588942bcaeba3e429ada517bfcb6f2b8b4de165e0",
-				"dweb:/ipfs/QmNX8L3o8RXXEqzhcPugVzwhiGohzYokKfr7G4aTdkRBQM"
+				"bzz-raw://5b44ca0a16541cb0d8064f2816a264d64287ea4495bb79f0c7c8b45c08d27b30",
+				"dweb:/ipfs/QmPqJZQAYZhXTMzoNNUKhk39CfvuVrjbyeqXkaXTAsg95G"
 			]
 		}
 	},

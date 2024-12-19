@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.6.11+commit.5ef660b1"
+		"version": "0.8.20+commit.a1b79de6"
 	},
 	"language": "Solidity",
 	"output": {
@@ -76,9 +76,9 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/contracts/Migrations.sol": "Migrations"
+			"contracts/Migrations.sol": "Migrations"
 		},
-		"evmVersion": "istanbul",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -90,12 +90,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/contracts/Migrations.sol": {
-			"keccak256": "0x446e142b08574d0b7773dfbe83d5af93a087e6bc2498fc1af4c6c4789023013f",
+		"contracts/Migrations.sol": {
+			"keccak256": "0x166d876c45d6e01aba252a6907f4974ae56e1fb8125d48df973e20a02030f796",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://8822b510c4c3a33db08b6934c09ad01ceab0f3905b9a54e1609b35e969e70f3d",
-				"dweb:/ipfs/QmRjp2uqHYGh2a6pufizt29gQ1Ywsbs4MobzuvJaVKX4B2"
+				"bzz-raw://8ffead96fd924a6ad15aa14cf4e3359d8a21ae6e493af373e6335c420da259d7",
+				"dweb:/ipfs/QmXyk67LouNpMVBPfmnaHAcxaN4GGrBUnSd5tzJrjcbJbz"
 			]
 		}
 	},

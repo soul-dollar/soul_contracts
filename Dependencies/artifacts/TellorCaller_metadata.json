@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.6.11+commit.5ef660b1"
+		"version": "0.8.20+commit.a1b79de6"
 	},
 	"language": "Solidity",
 	"output": {
@@ -72,9 +72,9 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/contracts/Dependencies/TellorCaller.sol": "TellorCaller"
+			"contracts/Dependencies/TellorCaller.sol": "TellorCaller"
 		},
-		"evmVersion": "istanbul",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -86,36 +86,36 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/contracts/Dependencies/ITellor.sol": {
-			"keccak256": "0x9f2984a17b9afddcc5bbac4c07714e6b1f6edb1cc54714ddd40fb4409fe259eb",
+		"contracts/Dependencies/ITellor.sol": {
+			"keccak256": "0xb751ff08247b68ddd766616fe318a4a5c1c911fe7af0a0b5b0379c54d86f0f3c",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://351276482be04a139a59e46e14899c733477ba1ce366e68ef44214bc2240bdba",
-				"dweb:/ipfs/QmeX9xc56bJFKpeLqznajpzS8zs5z8iiNaVmfNbPeVgcP6"
+				"bzz-raw://f2f7c4dfa9f0c3886f3ddfbac19e47f8f0657d2b6e3313dbd300efca6f3b4531",
+				"dweb:/ipfs/QmdTB68FzTgKjxi24rnTsNzck9wV63m6BVaPpB7J9ja8UM"
 			]
 		},
-		"contracts/contracts/Dependencies/SafeMath.sol": {
-			"keccak256": "0x666b890992a066cc791f36c2975cd595d9761a014c654c385ed36ffaf658f3fd",
+		"contracts/Dependencies/SafeMath.sol": {
+			"keccak256": "0xae124fee628d4223ca87e4f6b7b628747ab7a8e7c58b632b2185d8fdb7205009",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://7b261f6ac077c4ebc81dd3f4c833f866139acd8b908feff72385c32f83c21c2d",
-				"dweb:/ipfs/Qmb91cmmBEFhwUWwVxgxTPmeNxzdiyCdxoVXB2gN3Gvg7e"
+				"bzz-raw://ea436b09e124223a64f3cf904e44bd04fd09e111198eb1dd906f5b4ac18f9397",
+				"dweb:/ipfs/QmTXXWi49h5vecKqsBN6bKzXnpzUKaLqgGSwdfEctaTCoV"
 			]
 		},
-		"contracts/contracts/Dependencies/TellorCaller.sol": {
-			"keccak256": "0x29c1fffa3d1aa8a4820502605381e66e2fc1538728ffcfd7e87f3d7c1f1ef038",
+		"contracts/Dependencies/TellorCaller.sol": {
+			"keccak256": "0xea50bd0db4416a4e8bde004248d8a53e708c1db73215a05b5e358ac2489ba873",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://6d034bb5b1716ee32effc9675946c544f18eb0563103af582071cd7070647bc5",
-				"dweb:/ipfs/QmR7UCVvsTjPDygKTMDPFT8xwbeDwMKEgdwQpSaueYLC6u"
+				"bzz-raw://f89ca101b5387ff96d69c4dceaecdd56d4fbe372c60dc35b70cab5e411726d93",
+				"dweb:/ipfs/QmdF4hKaVpgQ9ktg4QQmboi37jrqcnN4i84UMLzPLN6umt"
 			]
 		},
-		"contracts/contracts/Interfaces/ITellorCaller.sol": {
-			"keccak256": "0xda790bd8d4de73788e82f223c0e6986407e0a9277f3a059bce01617008e9f05d",
+		"contracts/Interfaces/ITellorCaller.sol": {
+			"keccak256": "0x5d10a0164c12e374239b57275ebe35df0b100cc7ec9cad4e760b7d37519ec25d",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://6f33bbcbc67ea04e4553064d5ff3e699b3db7a3f8236295a5e6d707c2cd6c7f1",
-				"dweb:/ipfs/QmVzUZpUJc8VnpXvMuKTSRHW9WLpVQYHqV5pTa1V6YGFhv"
+				"bzz-raw://093752adf334cc51a9b15d28231d32e936fd997a9323c25ecac70ffa4c72dd97",
+				"dweb:/ipfs/Qmew1hcfrVCG3veYNnEv1BgigmrZ6ik4hRyvMhzGNqnNb4"
 			]
 		}
 	},

@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.6.11+commit.5ef660b1"
+		"version": "0.8.20+commit.a1b79de6"
 	},
 	"language": "Solidity",
 	"output": {
@@ -265,11 +265,6 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "_mst",
-						"type": "address"
-					},
-					{
-						"internalType": "address",
 						"name": "_lqtyTokenAddress",
 						"type": "address"
 					},
@@ -291,11 +286,6 @@
 					{
 						"internalType": "address",
 						"name": "_activePoolAddress",
-						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "_lqtyVault",
 						"type": "address"
 					}
 				],
@@ -344,26 +334,26 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/contracts/Interfaces/ILQTYStaking.sol": "ILQTYStaking"
+			"contracts/Interfaces/oldILQTYStaking.sol": "ILQTYStaking"
 		},
-		"evmVersion": "istanbul",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
 			"enabled": true,
-			"runs": 1
+			"runs": 200
 		},
 		"remappings": []
 	},
 	"sources": {
-		"contracts/contracts/Interfaces/ILQTYStaking.sol": {
-			"keccak256": "0x8c5bf7a7bc8bd08943cd80c1e82f87b2d0fe8d14ca85e02651d26380068c8a88",
+		"contracts/Interfaces/oldILQTYStaking.sol": {
+			"keccak256": "0x0784b2a3a7f134e36729561c6d77875b92104d7e0fa1db98093af2e74522b48c",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://52e30211d76d94ba4fe19c2a5969bae07ea760463ee1d24e3f8dc0549df724fb",
-				"dweb:/ipfs/QmaePAf7rZs2GdHcDHgyTkfCTW7UKHEfYs933iw1oxbveo"
+				"bzz-raw://ae628612fa120e252739792ba0448fceb15a9704c71055f7911894b318c3474e",
+				"dweb:/ipfs/QmbL5J2fxs6RQhUu7d1EL2Y732Cp4UvUcrYzVMz5JJQH86"
 			]
 		}
 	},

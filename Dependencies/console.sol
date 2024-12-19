@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.6.11;
+pragma solidity 0.8.20;
 
 // Buidler's helper contract for console logging
 library console {
@@ -39,7 +39,7 @@ library console {
 		ignored;
 	}
 
-	function logByte(byte p0) internal view {
+	function logByte(bytes1 p0) internal view {
 		(bool ignored, ) = CONSOLE_ADDRESS.staticcall(abi.encodeWithSignature("log(byte)", p0));
 		ignored;
 	}

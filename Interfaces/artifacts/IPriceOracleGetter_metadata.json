@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.6.11+commit.5ef660b1"
+		"version": "0.8.20+commit.a1b79de6"
 	},
 	"language": "Solidity",
 	"output": {
@@ -50,9 +50,9 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/contracts/Interfaces/IPriceOracleGetter.sol": "IPriceOracleGetter"
+			"contracts/Interfaces/IPriceOracleGetter.sol": "IPriceOracleGetter"
 		},
-		"evmVersion": "istanbul",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -64,12 +64,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/contracts/Interfaces/IPriceOracleGetter.sol": {
-			"keccak256": "0xf3f3c38249fd4cb7876f1504137e8d9f5fcb58939fd8a066f705a69ccd9faf8f",
+		"contracts/Interfaces/IPriceOracleGetter.sol": {
+			"keccak256": "0x4c7c10c2211f40efa778fd0686814de0a7a7cc9ad95ee37b7cbfdb412154aafa",
 			"license": "agpl-3.0",
 			"urls": [
-				"bzz-raw://f8048ddd04ce34baefd94e05fba049c17e34d947d4d425cf6a614a98a9632b98",
-				"dweb:/ipfs/QmZs4Mw1ubnatKbGDeTdntYZzTFe4TNXVbhxLc6xw98PoG"
+				"bzz-raw://a2ca0bb0670b7ebaeb2cce25f6691ac677ead3bfba3ab6464321a302226742b6",
+				"dweb:/ipfs/QmbH7Cv6kQyPVYkEPLgDvFTsRWae4ermaQNCGfCeTo1kK3"
 			]
 		}
 	},
