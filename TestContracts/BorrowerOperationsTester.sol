@@ -54,7 +54,7 @@ contract BorrowerOperationsTester is BorrowerOperations {
         address _lowerHint)
         external 
     {
-        _adjustTrove(_borrower, 0, _collWithdrawal, _debtChange, _isDebtIncrease, _upperHint, _lowerHint, 0);
+
     }
 
 

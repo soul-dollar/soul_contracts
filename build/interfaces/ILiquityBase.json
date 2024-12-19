@@ -1,0 +1,141 @@
+{
+  "abi": [
+    {
+      "inputs": [],
+      "name": "priceFeed",
+      "outputs": [
+        {
+          "internalType": "contract IPriceFeed",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "ast": {
+    "absolutePath": "interfaces/ILiquityBase.sol",
+    "exportedSymbols": {
+      "ILiquityBase": [
+        535
+      ]
+    },
+    "id": 536,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 528,
+        "literals": [
+          "solidity",
+          "0.6",
+          ".11"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:10"
+      },
+      {
+        "absolutePath": "interfaces/IPriceFeed.sol",
+        "file": "./IPriceFeed.sol",
+        "id": 529,
+        "nodeType": "ImportDirective",
+        "scope": 536,
+        "sourceUnit": 633,
+        "src": "58:26:10",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 535,
+        "linearizedBaseContracts": [
+          535
+        ],
+        "name": "ILiquityBase",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "741bef1a",
+            "id": 534,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "priceFeed",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 530,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "134:2:10"
+            },
+            "returnParameters": {
+              "id": 533,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 532,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 534,
+                  "src": "160:10:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IPriceFeed_$632",
+                    "typeString": "contract IPriceFeed"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 531,
+                    "name": "IPriceFeed",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 632,
+                    "src": "160:10:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IPriceFeed_$632",
+                      "typeString": "contract IPriceFeed"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "159:12:10"
+            },
+            "scope": 535,
+            "src": "116:56:10",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 536,
+        "src": "87:87:10"
+      }
+    ],
+    "src": "33:142:10"
+  },
+  "contractName": "ILiquityBase",
+  "dependencies": [
+    "IPriceFeed"
+  ],
+  "offset": [
+    87,
+    174
+  ],
+  "sha1": "0d2377dfaa58ab0e7d92a3076b883508b15cbfae",
+  "source": "// SPDX-License-Identifier: MIT\n\npragma solidity 0.6.11;\n\nimport \"./IPriceFeed.sol\";\n\n\ninterface ILiquityBase {\n    function priceFeed() external view returns (IPriceFeed);\n}\n",
+  "type": "interface"
+}
