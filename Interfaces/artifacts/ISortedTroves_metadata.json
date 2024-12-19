@@ -1,0 +1,394 @@
+{
+	"compiler": {
+		"version": "0.8.20+commit.a1b79de6"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_borrowerOperationsAddress",
+						"type": "address"
+					}
+				],
+				"name": "BorrowerOperationsAddressChanged",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_id",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_NICR",
+						"type": "uint256"
+					}
+				],
+				"name": "NodeAdded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_id",
+						"type": "address"
+					}
+				],
+				"name": "NodeRemoved",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_sortedDoublyLLAddress",
+						"type": "address"
+					}
+				],
+				"name": "SortedTrovesAddressChanged",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_id",
+						"type": "address"
+					}
+				],
+				"name": "contains",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_ICR",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_prevId",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_nextId",
+						"type": "address"
+					}
+				],
+				"name": "findInsertPosition",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getFirst",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getLast",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getMaxSize",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_id",
+						"type": "address"
+					}
+				],
+				"name": "getNext",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_id",
+						"type": "address"
+					}
+				],
+				"name": "getPrev",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getSize",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_id",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_ICR",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_prevId",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_nextId",
+						"type": "address"
+					}
+				],
+				"name": "insert",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "isEmpty",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "isFull",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_id",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_newICR",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_prevId",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_nextId",
+						"type": "address"
+					}
+				],
+				"name": "reInsert",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_id",
+						"type": "address"
+					}
+				],
+				"name": "remove",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_size",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_TroveManagerAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_borrowerOperationsAddress",
+						"type": "address"
+					}
+				],
+				"name": "setParams",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_ICR",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_prevId",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_nextId",
+						"type": "address"
+					}
+				],
+				"name": "validInsertPosition",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Interfaces/ISortedTroves.sol": "ISortedTroves"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Interfaces/ISortedTroves.sol": {
+			"keccak256": "0x4506f9a154dc5326db862036a62a2adf13b93d9adf836c04f2ebb358552c2057",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://01932e1577c001c59fe9c60b75f5c76dd0845b4983b159364543436aff8c37b0",
+				"dweb:/ipfs/QmZpQaEtHwZSEiaBkfdJQi18Juexy8rpLyUwF96jTNGPZX"
+			]
+		}
+	},
+	"version": 1
+}

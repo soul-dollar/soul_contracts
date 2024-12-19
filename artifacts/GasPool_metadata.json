@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.6.11+commit.5ef660b1"
+		"version": "0.8.20+commit.a1b79de6"
 	},
 	"language": "Solidity",
 	"output": {
@@ -19,26 +19,26 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/contracts/GasPool.sol": "GasPool"
+			"contracts/GasPool.sol": "GasPool"
 		},
-		"evmVersion": "istanbul",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
 			"enabled": true,
-			"runs": 1
+			"runs": 200
 		},
 		"remappings": []
 	},
 	"sources": {
-		"contracts/contracts/GasPool.sol": {
-			"keccak256": "0x1846196c734332515a2559e6b293a638867437589f35c70d3526413b2aad0684",
+		"contracts/GasPool.sol": {
+			"keccak256": "0xeb56cc59815a9b908b0478e5af5f328d05a9dde5bb791c87bc237f2ec9bb19ab",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://0ba135169e31b85434cd2a57427e01a89df50921e453202240a2cf6d1ac326fe",
-				"dweb:/ipfs/QmS5GKgXXAbcvGs97r1YeHWmmvEkheE6cAbZyPAFF4aydX"
+				"bzz-raw://c05a9a4084aade915973c9cb2c682d6b156ffc2e4800d322aa1f447cc60e1014",
+				"dweb:/ipfs/QmR66LaDxdH37ZPFpFGP3kCAeEJW3fsyrnx6PkPCBh6Rrc"
 			]
 		}
 	},

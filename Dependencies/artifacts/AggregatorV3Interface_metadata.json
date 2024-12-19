@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.6.11+commit.5ef660b1"
+		"version": "0.8.20+commit.a1b79de6"
 	},
 	"language": "Solidity",
 	"output": {
@@ -130,9 +130,9 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/contracts/Dependencies/AggregatorV3Interface.sol": "AggregatorV3Interface"
+			"contracts/Dependencies/AggregatorV3Interface.sol": "AggregatorV3Interface"
 		},
-		"evmVersion": "istanbul",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -144,12 +144,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/contracts/Dependencies/AggregatorV3Interface.sol": {
-			"keccak256": "0x5f008214c72b2ed78e3af1b81213a4520562699ae4ab3cef6a2433a5b6e978ae",
+		"contracts/Dependencies/AggregatorV3Interface.sol": {
+			"keccak256": "0xf1f38396b9c15d806b39a595303101f1bc5f44ce41adac6e25d1f9ceba1e0329",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://c9d147bf1e801832d2349013a821b81cd06d3a0400945893da9880a06b2db743",
-				"dweb:/ipfs/QmVgug8zL8LEDitzcPnytTsBMg5VEN1BprQPsu6ficrZ99"
+				"bzz-raw://65439f5e402c84d54dff5aefdafb1b7b9a132d46a04abc6d278cd9e71308d2ec",
+				"dweb:/ipfs/QmSYQvAGoSD2Zf3JxCREqvzZsVmwNNrASC5FHHNBSdimth"
 			]
 		}
 	},

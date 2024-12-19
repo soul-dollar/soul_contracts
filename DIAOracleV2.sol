@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.6.11;
+pragma solidity 0.8.20;
 
 contract DIAOracleV2 {
     mapping (string => uint256) public values;
@@ -9,7 +9,7 @@ contract DIAOracleV2 {
     event OracleUpdate(string key, uint128 value, uint128 timestamp);
     event UpdaterAddressChange(address newUpdater);
     
-    constructor() public {
+    constructor()  {
         oracleUpdater = msg.sender;
     }
     

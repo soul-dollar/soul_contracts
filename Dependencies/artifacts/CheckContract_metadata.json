@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.6.11+commit.5ef660b1"
+		"version": "0.8.20+commit.a1b79de6"
 	},
 	"language": "Solidity",
 	"output": {
@@ -18,9 +18,9 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/contracts/Dependencies/CheckContract.sol": "CheckContract"
+			"contracts/Dependencies/CheckContract.sol": "CheckContract"
 		},
-		"evmVersion": "istanbul",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -32,12 +32,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/contracts/Dependencies/CheckContract.sol": {
-			"keccak256": "0x3f48bd50ad146a5c01c6c6adc89e4a3871de4497b31c609bfce9cdc280274305",
+		"contracts/Dependencies/CheckContract.sol": {
+			"keccak256": "0x3d727343212eec99341f951958429d9aeaac76456b206b8fe7ceb893eaef9df9",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://dde9848de01c0e6947c6ec5c8b7c54a7dd4ae1586f2e98f8b089bf6351b5ebe9",
-				"dweb:/ipfs/QmcoxPfiKP4LhCTwcAX8RiHG6w6hHQnt46UtCBphNMg4iW"
+				"bzz-raw://c2a2e2f03fc3edfa72d9d11ddeb1b66b46c4985c53d42d0cf7b887faf43174e3",
+				"dweb:/ipfs/QmSsXcCENwCskWjPnVBuZKRcHqbStdLFnS8H6464uFmoJt"
 			]
 		}
 	},

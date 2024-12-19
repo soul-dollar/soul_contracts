@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.6.11;
+pragma solidity 0.8.20;
 
 import "../Dependencies/BaseMath.sol";
 import "../Dependencies/SafeMath.sol";
@@ -36,28 +36,12 @@ contract LQTYStaking is ILQTYStaking, Ownable, CheckContract, BaseMath {
     IERC20 public WETH;
     ILQTYToken public lqtyToken;
     ILUSDToken public lusdToken;
-    IERC20 public MST;  
+    IERC20 public Soul;  
     
     address public lqtyVault;  
     address public troveManagerAddress;
     address public borrowerOperationsAddress;
     address public activePoolAddress;
-
-    // --- Events ---
-
-    event LQTYTokenAddressSet(address _lqtyTokenAddress);
-    event LUSDTokenAddressSet(address _lusdTokenAddress);
-    event TroveManagerAddressSet(address _troveManager);
-    event BorrowerOperationsAddressSet(address _borrowerOperationsAddress);
-    event ActivePoolAddressSet(address _activePoolAddress);
-
-    event StakeChanged(address indexed staker, uint newStake);
-    event StakingGainsWithdrawn(address indexed staker, uint LUSDGain, uint ETHGain);
-    event F_ETHUpdated(uint _F_ETH);
-    event F_LUSDUpdated(uint _F_LUSD);
-    event TotalLQTYStakedUpdated(uint _totalLQTYStaked);
-    event EtherSent(address _account, uint _amount);
-    event StakerSnapshotsUpdated(address _staker, uint _F_ETH, uint _F_LUSD);
 
     // --- Functions ---
 
@@ -86,7 +70,7 @@ contract LQTYStaking is ILQTYStaking, Ownable, CheckContract, BaseMath {
         checkContract(_activePoolAddress);
 
         WETH = IERC20(_weth); 
-        MST = IERC20(_mst); 
+        Soul = IERC20(_mst); 
         lqtyVault = _lqtyVault; 
         lqtyToken = ILQTYToken(_lqtyTokenAddress);
         lusdToken = ILUSDToken(_lusdTokenAddress);
@@ -126,7 +110,7 @@ contract LQTYStaking is ILQTYStaking, Ownable, CheckContract, BaseMath {
         totalLQTYStaked = totalLQTYStaked.add(_LQTYamount);
         emit TotalLQTYStakedUpdated(totalLQTYStaked);
 
-        require(MST.transferFrom(msg.sender, address(this), _LQTYamount),"Token transfer failed");
+        require(Soul.transferFrom(msg.sender, address(this), _LQTYamount),"Token transfer failed");
         
         lqtyToken.sendToLQTYStaking(lqtyVault, _LQTYamount);
 
@@ -165,7 +149,7 @@ contract LQTYStaking is ILQTYStaking, Ownable, CheckContract, BaseMath {
             // Transfer unstaked LQTY back to vault
             lqtyToken.transfer(lqtyVault, LQTYToWithdraw); 
 
-            require(MST.transfer(msg.sender, LQTYToWithdraw),"Token transfer failed");
+            require(Soul.transfer(msg.sender, LQTYToWithdraw),"Token transfer failed");
 
             emit StakeChanged(msg.sender, newStake);
         }

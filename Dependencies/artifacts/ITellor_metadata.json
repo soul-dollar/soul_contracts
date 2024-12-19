@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.6.11+commit.5ef660b1"
+		"version": "0.8.20+commit.a1b79de6"
 	},
 	"language": "Solidity",
 	"output": {
@@ -1529,9 +1529,9 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/contracts/Dependencies/ITellor.sol": "ITellor"
+			"contracts/Dependencies/ITellor.sol": "ITellor"
 		},
-		"evmVersion": "istanbul",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -1543,12 +1543,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/contracts/Dependencies/ITellor.sol": {
-			"keccak256": "0x9f2984a17b9afddcc5bbac4c07714e6b1f6edb1cc54714ddd40fb4409fe259eb",
+		"contracts/Dependencies/ITellor.sol": {
+			"keccak256": "0xb751ff08247b68ddd766616fe318a4a5c1c911fe7af0a0b5b0379c54d86f0f3c",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://351276482be04a139a59e46e14899c733477ba1ce366e68ef44214bc2240bdba",
-				"dweb:/ipfs/QmeX9xc56bJFKpeLqznajpzS8zs5z8iiNaVmfNbPeVgcP6"
+				"bzz-raw://f2f7c4dfa9f0c3886f3ddfbac19e47f8f0657d2b6e3313dbd300efca6f3b4531",
+				"dweb:/ipfs/QmdTB68FzTgKjxi24rnTsNzck9wV63m6BVaPpB7J9ja8UM"
 			]
 		}
 	},

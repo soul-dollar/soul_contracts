@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.6.11+commit.5ef660b1"
+		"version": "0.8.20+commit.a1b79de6"
 	},
 	"language": "Solidity",
 	"output": {
@@ -115,9 +115,9 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/contracts/LQTY/LQTYVault.sol": "LQTYVault"
+			"contracts/LQTY/LQTYVault.sol": "LQTYVault"
 		},
-		"evmVersion": "istanbul",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -129,36 +129,36 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/contracts/Dependencies/IERC20.sol": {
-			"keccak256": "0xe0b2473eba89df8d27d7cea2a99fce788c212f3fd393c9508e449e51a3f220fa",
+		"contracts/Dependencies/IERC20.sol": {
+			"keccak256": "0x433e8e8aca0a70595ce4224d990c1435588088b95be442e7f12c5d3e16c44bd8",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://8522c2a1abbac5136e3b0d76f458e2ecc9d380687444517a11db341634e9c146",
-				"dweb:/ipfs/QmXuyq8uopmrPruJvhXX9q5X2xqmrYmTauhEPQhoKjmaV9"
+				"bzz-raw://b8843062f1095f996b90e7623b28d3fa1b0696e1f7e288b2f2092e33f4ce3315",
+				"dweb:/ipfs/Qmdm1ZCR9CGihpzxEc9UCa54HsgvLMbrfW7GFzcoTCQHp4"
 			]
 		},
-		"contracts/contracts/Dependencies/IERC2612.sol": {
-			"keccak256": "0xd376458452f8b480bfea549637bd71d3f9eb1f12e9d59d1beff373417462d67f",
+		"contracts/Dependencies/IERC2612.sol": {
+			"keccak256": "0x13199a3a79c62fcf7e0259ec3913278f942f03146412e30906b8c7e23bb63119",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://e0750f6f0a3624aa6cc128d5e666f78b5edf7e394a08c4c06b7ef536278d34af",
-				"dweb:/ipfs/QmRTv2MnvAAbuBDtDNWN4Jyv5dAsCdLAzGpJPSnforPLqv"
+				"bzz-raw://5b06dc5eb820d01735126b50ab8eb1a2d768d5127e4bc4b7e8a86900d47af285",
+				"dweb:/ipfs/QmVSKStcPe5ViWDY1BmAdMRHDGkMZLrEoCq2H3HsbswdKr"
 			]
 		},
-		"contracts/contracts/Interfaces/ILQTYToken.sol": {
-			"keccak256": "0x5e4ffb34b4f3fa77718061a40858722b3811be1ea99ca498c637e97237a4a83a",
+		"contracts/Interfaces/ILQTYToken.sol": {
+			"keccak256": "0xebc139c37c6f7f7d1d29f5b94221f489138342ed78742bb9a87580225cd3dac1",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://5c729af77d7c08cb4ac0b0886dbda817afd5b83a235797b82b0ce9b3a251faf7",
-				"dweb:/ipfs/QmbWf5HVLs1v7vrfuLzgXhddUvyPW76YXLYMRqH96o5Bpx"
+				"bzz-raw://7b142680d5881bde60a20130c55476ee778a860eca2c87d9b6c15cfa7ea7b662",
+				"dweb:/ipfs/QmWt1r9LGUx4daohvTogWtVH4G9RCEQTC2CGfmCn1aKZTK"
 			]
 		},
-		"contracts/contracts/LQTY/LQTYVault.sol": {
-			"keccak256": "0x0132a7980dd9fb2d6c6280bf0d52f5f077b129dd06cc7a6446ac0893a046235b",
+		"contracts/LQTY/LQTYVault.sol": {
+			"keccak256": "0x942276b39e24d113b568a9eb17c2a979e01e0354284b664f0fdcf63a40dd1d98",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://e61e20b709c0772c01806a1bd0cf0c7d8c17898a39ba01117d33e176cc6d3880",
-				"dweb:/ipfs/QmSB71dwvjUxHiLtCRjoZFUAs9koRuawjHXBRKT2k3eXY6"
+				"bzz-raw://c3723223c54b5e5eb61f5d8dc57445b26a3a47a71fb404e31d9d68e7066894ab",
+				"dweb:/ipfs/QmeEmvfCcdNtJ68CMTaopjaJsbji48V46DbHAkSUSQDRvb"
 			]
 		}
 	},

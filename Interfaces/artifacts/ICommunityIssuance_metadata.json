@@ -1,0 +1,134 @@
+{
+	"compiler": {
+		"version": "0.8.20+commit.a1b79de6"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_lqtyTokenAddress",
+						"type": "address"
+					}
+				],
+				"name": "LQTYTokenAddressSet",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_stabilityPoolAddress",
+						"type": "address"
+					}
+				],
+				"name": "StabilityPoolAddressSet",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_totalLQTYIssued",
+						"type": "uint256"
+					}
+				],
+				"name": "TotalLQTYIssuedUpdated",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "issueLQTY",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_account",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_LQTYamount",
+						"type": "uint256"
+					}
+				],
+				"name": "sendLQTY",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_lqtyTokenAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_stabilityPoolAddress",
+						"type": "address"
+					}
+				],
+				"name": "setAddresses",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Interfaces/ICommunityIssuance.sol": "ICommunityIssuance"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Interfaces/ICommunityIssuance.sol": {
+			"keccak256": "0x8b2259d1de0a8935cc59fb2f3f230ada7493f0baca05ff63d874ce1edaa35429",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://51c35049ae25809128e60dd4d25a76683a7552df7137c14e8dc16ce35f58d0f2",
+				"dweb:/ipfs/QmaCG12tDaBDEywUCGxss6ocTJu4tSDfnNqNYSw6ekvKz3"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.6.11;
+pragma solidity 0.8.20;
 
 import "./Interfaces/ILUSDToken.sol";
 import "./Dependencies/SafeMath.sol";
@@ -28,8 +28,8 @@ contract LUSDToken is CheckContract, ILUSDToken {
     using SafeMath for uint256;
     
     uint256 private _totalSupply;
-    string constant internal _NAME = "USDM Stablecoin";
-    string constant internal _SYMBOL = "USDM";
+    string constant internal _NAME = "SOULS USD";
+    string constant internal _SYMBOL = "SUSD";
     string constant internal _VERSION = "1";
     uint8 constant internal _DECIMALS = 18;
     
@@ -58,11 +58,7 @@ contract LUSDToken is CheckContract, ILUSDToken {
     address public immutable troveManagerAddress;
     address public immutable stabilityPoolAddress;
     address public immutable borrowerOperationsAddress;
-    
-    // --- Events ---
-    event TroveManagerAddressChanged(address _troveManagerAddress);
-    event StabilityPoolAddressChanged(address _newStabilityPoolAddress);
-    event BorrowerOperationsAddressChanged(address _newBorrowerOperationsAddress);
+
 
     constructor
     ( 
@@ -70,7 +66,6 @@ contract LUSDToken is CheckContract, ILUSDToken {
         address _stabilityPoolAddress,
         address _borrowerOperationsAddress
     ) 
-        public 
     {  
         checkContract(_troveManagerAddress);
         checkContract(_stabilityPoolAddress);
@@ -181,7 +176,7 @@ contract LUSDToken is CheckContract, ILUSDToken {
         external 
         override 
     {            
-        require(deadline >= now, 'LUSD: expired deadline');
+        require(deadline >= block.timestamp, 'LUSD: expired deadline');
         bytes32 digest = keccak256(abi.encodePacked('\x19\x01', 
                          domainSeparator(), keccak256(abi.encode(
                          _PERMIT_TYPEHASH, owner, spender, amount, 
@@ -197,7 +192,7 @@ contract LUSDToken is CheckContract, ILUSDToken {
 
     // --- Internal operations ---
 
-    function _chainID() private pure returns (uint256 chainID) {
+    function _chainID() private view returns (uint256 chainID) {
         assembly {
             chainID := chainid()
         }
@@ -284,23 +279,23 @@ contract LUSDToken is CheckContract, ILUSDToken {
 
     // --- Optional functions ---
 
-    function name() external view override returns (string memory) {
+    function name() external pure override returns (string memory) {
         return _NAME;
     }
 
-    function symbol() external view override returns (string memory) {
+    function symbol() external pure override returns (string memory) {
         return _SYMBOL;
     }
 
-    function decimals() external view override returns (uint8) {
+    function decimals() external pure override returns (uint8) {
         return _DECIMALS;
     }
 
-    function version() external view override returns (string memory) {
+    function version() external pure override returns (string memory) {
         return _VERSION;
     }
 
-    function permitTypeHash() external view override returns (bytes32) {
+    function permitTypeHash() external pure override returns (bytes32) {
         return _PERMIT_TYPEHASH;
     }
 }

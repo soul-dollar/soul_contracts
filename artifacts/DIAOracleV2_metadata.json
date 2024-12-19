@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.6.11+commit.5ef660b1"
+		"version": "0.8.20+commit.a1b79de6"
 	},
 	"language": "Solidity",
 	"output": {
@@ -141,9 +141,9 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/contracts/DIAOracleV2.sol": "DIAOracleV2"
+			"contracts/DIAOracleV2.sol": "DIAOracleV2"
 		},
-		"evmVersion": "istanbul",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -155,12 +155,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/contracts/DIAOracleV2.sol": {
-			"keccak256": "0xec32bb9b43cfb0aefe46218297e95925afafd6896ec24a494deb4b585dbba4ec",
+		"contracts/DIAOracleV2.sol": {
+			"keccak256": "0x0be34ccf1c9926ade1247b1ee55488348fe9543df576612a8eb4843dbedbc27e",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://1a20765458cab992e78c1170c3c5db029e1250a19f5afae9853075d04c1e503c",
-				"dweb:/ipfs/QmPm4Ev1yKBc7tDyYNog5g18ULcEQEGY2bBHCQ8ZgAm9hU"
+				"bzz-raw://f06df8c99f3cda0479c7b4b2325ae2838fe8a15efc5b0b9ae12649f4cd101f2a",
+				"dweb:/ipfs/QmdhnZW4QHoWWaudj4JA4Vj5SwBubqqF8wxw9nXumhiZ1W"
 			]
 		}
 	},

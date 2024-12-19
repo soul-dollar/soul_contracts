@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.6.11+commit.5ef660b1"
+		"version": "0.8.20+commit.a1b79de6"
 	},
 	"language": "Solidity",
 	"output": {
@@ -406,7 +406,9 @@
 		"userdoc": {
 			"kind": "user",
 			"methods": {
-				"constructor": "Constructor",
+				"constructor": {
+					"notice": "Constructor"
+				},
 				"getFallbackOracle()": {
 					"notice": "Gets the address of the fallback oracle"
 				},
@@ -435,9 +437,9 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/contracts/PriceFeed.sol": "PriceFeed"
+			"contracts/PriceFeed.sol": "PriceFeed"
 		},
-		"evmVersion": "istanbul",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -449,44 +451,44 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/contracts/DIAOracleV2.sol": {
-			"keccak256": "0xec32bb9b43cfb0aefe46218297e95925afafd6896ec24a494deb4b585dbba4ec",
+		"contracts/DIAOracleV2.sol": {
+			"keccak256": "0x0be34ccf1c9926ade1247b1ee55488348fe9543df576612a8eb4843dbedbc27e",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://1a20765458cab992e78c1170c3c5db029e1250a19f5afae9853075d04c1e503c",
-				"dweb:/ipfs/QmPm4Ev1yKBc7tDyYNog5g18ULcEQEGY2bBHCQ8ZgAm9hU"
+				"bzz-raw://f06df8c99f3cda0479c7b4b2325ae2838fe8a15efc5b0b9ae12649f4cd101f2a",
+				"dweb:/ipfs/QmdhnZW4QHoWWaudj4JA4Vj5SwBubqqF8wxw9nXumhiZ1W"
 			]
 		},
-		"contracts/contracts/Dependencies/Ownable.sol": {
-			"keccak256": "0x33ebd980403ab2462257b6b0352dd42d6d4ae86ce9de8c8fa7b8b5a84c585f1b",
+		"contracts/Dependencies/Ownable.sol": {
+			"keccak256": "0xe918cfb483fc33e2ac0281e7501d1646776916a999449c30dbb4b552673031ec",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://c164606fdfd19624a7cf85fb8258b1866431a45a208489cd7158db0f132fc212",
-				"dweb:/ipfs/QmYsmA6SdwwHSguo2SHDWP9wAxkvb1NPr7Yevw9vGhwCaV"
+				"bzz-raw://b5ce9a0c9f6ffc0ab68a5b65cee22501f69d46dea73e8be4622ff3f4545ebb83",
+				"dweb:/ipfs/QmbSjTyRbS6G1qdSAC12qnR8iwr96tyY1pgxaFpoWip6ou"
 			]
 		},
-		"contracts/contracts/Interfaces/IPriceFeed.sol": {
-			"keccak256": "0x8addf8adace4b531698302a46cc65d357ef4302aea661502263420e931318172",
+		"contracts/Interfaces/IPriceFeed.sol": {
+			"keccak256": "0x0d4e2b89f36d90a20675d433e5f96d2829e00a54f2f55205cb8fed9d17502483",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://0054616ceb3db586a38f205e807c0724752d6d172b34299b9acdcfefdb8fffaf",
-				"dweb:/ipfs/QmY9BPjvfui1ReXjrTb4wYrCzZXNow7xqkqZyPG1eHUB4i"
+				"bzz-raw://cb744ec70ae9144d1c381ef01b649c5e0a7eeb8982b47a1b293e3284b7d85a7d",
+				"dweb:/ipfs/QmZiL54Ndx6BLnx3GamFiVifk4YePTRG1Pfbm1WJTXzHXf"
 			]
 		},
-		"contracts/contracts/Interfaces/IPriceOracleGetter.sol": {
-			"keccak256": "0xf3f3c38249fd4cb7876f1504137e8d9f5fcb58939fd8a066f705a69ccd9faf8f",
+		"contracts/Interfaces/IPriceOracleGetter.sol": {
+			"keccak256": "0x4c7c10c2211f40efa778fd0686814de0a7a7cc9ad95ee37b7cbfdb412154aafa",
 			"license": "agpl-3.0",
 			"urls": [
-				"bzz-raw://f8048ddd04ce34baefd94e05fba049c17e34d947d4d425cf6a614a98a9632b98",
-				"dweb:/ipfs/QmZs4Mw1ubnatKbGDeTdntYZzTFe4TNXVbhxLc6xw98PoG"
+				"bzz-raw://a2ca0bb0670b7ebaeb2cce25f6691ac677ead3bfba3ab6464321a302226742b6",
+				"dweb:/ipfs/QmbH7Cv6kQyPVYkEPLgDvFTsRWae4ermaQNCGfCeTo1kK3"
 			]
 		},
-		"contracts/contracts/PriceFeed.sol": {
-			"keccak256": "0x98918954a94998ff962c14de9773dc42084a358c5eac2a30e2d9875806b6358b",
+		"contracts/PriceFeed.sol": {
+			"keccak256": "0xf82ac28136874a6b426223dc586789ca8e6ae0d278b805d9ddf2b2c60ccb1fe8",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://4dc670d3d4b22babf05bcff7057987cd24d34aadbae6a70b7c330c4e686c5a44",
-				"dweb:/ipfs/QmezKU5tWvyYgfPTZeQDcfvCqCGL9M3UqMMDfhCsKiWMJ8"
+				"bzz-raw://f4171fb90b0cae7035b0ebc545bfc33dbe91f70c4cddba6f260255df99c3dfe3",
+				"dweb:/ipfs/QmZE53854sKcJRnxSBJNUDg9gNuXB2gUzoSM9D62MtU9z8"
 			]
 		}
 	},

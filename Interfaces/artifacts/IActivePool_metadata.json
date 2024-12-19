@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.6.11+commit.5ef660b1"
+		"version": "0.8.20+commit.a1b79de6"
 	},
 	"language": "Solidity",
 	"output": {
@@ -225,9 +225,9 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/contracts/Interfaces/IActivePool.sol": "IActivePool"
+			"contracts/Interfaces/oldIActivePool.sol": "IActivePool"
 		},
-		"evmVersion": "istanbul",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -239,20 +239,20 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/contracts/Interfaces/IActivePool.sol": {
-			"keccak256": "0x6c7834463095e2f3f3aee7d8733d08b6388f511ef904b52dc85e638f65b8bb12",
+		"contracts/Interfaces/IPool.sol": {
+			"keccak256": "0x54669acd7a4653a818191744087611550a7a303e1448a257ddbe6a72bb3af515",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://b01f6b3c1e930583a232769d4aea920e0e2a1606d36419e9d52b65b731a0fc45",
-				"dweb:/ipfs/QmQKnjjV4HjdaxHd68t1TsJFKu9uB8X9Q5jnarRmeauc8V"
+				"bzz-raw://5b44ca0a16541cb0d8064f2816a264d64287ea4495bb79f0c7c8b45c08d27b30",
+				"dweb:/ipfs/QmPqJZQAYZhXTMzoNNUKhk39CfvuVrjbyeqXkaXTAsg95G"
 			]
 		},
-		"contracts/contracts/Interfaces/IPool.sol": {
-			"keccak256": "0xe67abedc1c03d9fb93e6a04ea853d0cb82cca7c87eb2b771e4f07285fd596382",
+		"contracts/Interfaces/oldIActivePool.sol": {
+			"keccak256": "0x7fd981f920d8260968d538eb78444ab98ffb1da91abdd297ab6db14bb28a3f68",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://01179c7dd9ba1a45d0c58ba588942bcaeba3e429ada517bfcb6f2b8b4de165e0",
-				"dweb:/ipfs/QmNX8L3o8RXXEqzhcPugVzwhiGohzYokKfr7G4aTdkRBQM"
+				"bzz-raw://d461335ec642f5ef16619d539c7bc7a2695b387d4644f82eaf15afb94140e678",
+				"dweb:/ipfs/QmSLNeTeCC7aSAVpjjfTsMiFegmxYFX3BbZEGGpXyjnbrZ"
 			]
 		}
 	},

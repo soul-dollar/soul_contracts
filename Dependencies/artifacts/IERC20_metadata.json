@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.6.11+commit.5ef660b1"
+		"version": "0.8.20+commit.a1b79de6"
 	},
 	"language": "Solidity",
 	"output": {
@@ -318,26 +318,26 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/contracts/Dependencies/IERC20.sol": "IERC20"
+			"contracts/Dependencies/IERC20.sol": "IERC20"
 		},
-		"evmVersion": "istanbul",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
 			"enabled": true,
-			"runs": 1
+			"runs": 200
 		},
 		"remappings": []
 	},
 	"sources": {
-		"contracts/contracts/Dependencies/IERC20.sol": {
-			"keccak256": "0xe0b2473eba89df8d27d7cea2a99fce788c212f3fd393c9508e449e51a3f220fa",
+		"contracts/Dependencies/IERC20.sol": {
+			"keccak256": "0x433e8e8aca0a70595ce4224d990c1435588088b95be442e7f12c5d3e16c44bd8",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://8522c2a1abbac5136e3b0d76f458e2ecc9d380687444517a11db341634e9c146",
-				"dweb:/ipfs/QmXuyq8uopmrPruJvhXX9q5X2xqmrYmTauhEPQhoKjmaV9"
+				"bzz-raw://b8843062f1095f996b90e7623b28d3fa1b0696e1f7e288b2f2092e33f4ce3315",
+				"dweb:/ipfs/Qmdm1ZCR9CGihpzxEc9UCa54HsgvLMbrfW7GFzcoTCQHp4"
 			]
 		}
 	},

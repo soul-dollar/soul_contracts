@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.6.11;
+pragma solidity 0.8.20;
 
 import "../Interfaces/ILQTYToken.sol";
 
@@ -18,7 +18,7 @@ contract LQTYVault  {
 
     event TokenAddressSet (address _token);
 
-    constructor(address _stakingContract) public {
+    constructor(address _stakingContract)  {
         require(_stakingContract != address(0),"Invalid contract address");
         stakingContract = _stakingContract;
         owner = msg.sender;

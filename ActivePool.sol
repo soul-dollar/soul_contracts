@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.6.11;
+pragma solidity 0.8.20;
 
 import './Interfaces/IActivePool.sol';
 import './Interfaces/ICollSurplusPool.sol';
@@ -37,12 +37,7 @@ contract ActivePool is Ownable, CheckContract, IActivePool {
     uint256 internal LUSDDebt;
     bool public isInitialized;
 
-    // --- Events ---
 
-    event BorrowerOperationsAddressChanged(address _newBorrowerOperationsAddress);
-    event TroveManagerAddressChanged(address _newTroveManagerAddress);
-    event ActivePoolLUSDDebtUpdated(uint _LUSDDebt);
-    event ActivePoolETHBalanceUpdated(uint _ETH);
 
     // --- Contract setters ---
 
@@ -51,6 +46,7 @@ contract ActivePool is Ownable, CheckContract, IActivePool {
         checkContract(_weth);
         isInitialized = true;
         WETH = IERC20(_weth);
+        _renounceOwnership();
     }
 
     function setAddresses(
@@ -83,7 +79,6 @@ contract ActivePool is Ownable, CheckContract, IActivePool {
         emit StabilityPoolAddressChanged(_stabilityPoolAddress);
         emit DefaultPoolAddressChanged(_defaultPoolAddress);
 
-        _renounceOwnership();
     }
 
     // --- Getters for public variables. Required by IPool interface ---
@@ -117,13 +112,13 @@ contract ActivePool is Ownable, CheckContract, IActivePool {
     function increaseLUSDDebt(uint _amount) external override {
         _requireCallerIsBOorTroveM();
         LUSDDebt  = LUSDDebt.add(_amount);
-        ActivePoolLUSDDebtUpdated(LUSDDebt);
+        emit ActivePoolLUSDDebtUpdated(LUSDDebt);
     }
 
     function decreaseLUSDDebt(uint _amount) external override {
         _requireCallerIsBOorTroveMorSP();
         LUSDDebt = LUSDDebt.sub(_amount);
-        ActivePoolLUSDDebtUpdated(LUSDDebt);
+        emit ActivePoolLUSDDebtUpdated(LUSDDebt);
     }
 
     // --- 'require' functions ---
@@ -166,7 +161,7 @@ contract ActivePool is Ownable, CheckContract, IActivePool {
 
     function receiveERC20(uint _amount) external override {
         _requireCallerIsBorrowerOperationsOrDefaultPool();
-        require(WETH.balanceOf(address(this)) == ETH.add(_amount),"ActivePool: Funds not received");
+        require(WETH.balanceOf(address(this)) >= ETH.add(_amount),"ActivePool: Funds not received");
         ETH = ETH.add(_amount);
         emit ActivePoolETHBalanceUpdated(ETH);
     }
